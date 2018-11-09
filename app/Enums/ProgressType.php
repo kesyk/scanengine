@@ -8,8 +8,14 @@
 
 namespace App\Enums;
 
+use MyCLabs\Enum\Enum;
 
-class ProgressType
+
+class ProgressType extends Enum
 {
+    private const NEW = 'new';
+    private const IN_PROCESS = 'inprocess';
+    private const COMPLETED = 'completed';
+    private const FAILED = 'failed';
 
 }

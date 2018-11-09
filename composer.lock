@@ -453,6 +453,65 @@
             "time": "2015-04-20T18:58:01+00:00"
         },
         {
+            "name": "jenky/laravel-plupload",
+            "version": "3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jenky/laravel-plupload.git",
+                "reference": "95896d834f3aa6a025d4c17269020e40b45209f2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jenky/laravel-plupload/zipball/95896d834f3aa6a025d4c17269020e40b45209f2",
+                "reference": "95896d834f3aa6a025d4c17269020e40b45209f2",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^5.2",
+                "illuminate/support": "^5.2",
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0-dev",
+                    "dev-develop": "3.0-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Jenky\\LaravelPlupload\\PluploadServiceProvider"
+                    ],
+                    "aliases": {
+                        "Plupload": "Jenky\\LaravelPlupload\\Facades\\Plupload"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Jenky\\LaravelPlupload\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Linh Tran",
+                    "email": "jenky.w0w@gmail.com"
+                }
+            ],
+            "description": "Plupload package for Laravel 5",
+            "keywords": [
+                "laravel",
+                "plupload"
+            ],
+            "time": "2018-06-16T16:12:45+00:00"
+        },
+        {
             "name": "laravel/framework",
             "version": "v5.7.13",
             "source": {

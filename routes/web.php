@@ -11,6 +11,7 @@
 |
 */
 
-Route::get('/', "HomeController@index");
+Route::get('/', "HomeController@index")->name('home');
+Route::get('upload', "UploadController@index")->name('upload');
 
-Route::post('upload', "UploadController@upload")->name('upload');;
+Route::post('upload', "UploadController@upload")->name('uploadscanfile');

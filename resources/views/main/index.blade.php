@@ -36,920 +36,559 @@
 			<div id="content">
 
 				<div class="row">
-					<div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
-						<h1 class="page-title txt-color-blueDark"><i class="fa-fw fa fa-home"></i> Dashboard <span>> My Dashboard</span></h1>
-					</div>
-					<div class="col-xs-12 col-sm-5 col-md-5 col-lg-8">
-						<ul id="sparks" class="">
-							<li class="sparks-info">
-								<h5> My Income <span class="txt-color-blue">$47,171</span></h5>
-								<div class="sparkline txt-color-blue hidden-mobile hidden-md hidden-sm">
-									1300, 1877, 2500, 2577, 2000, 2100, 3000, 2700, 3631, 2471, 2700, 3631, 2471
-								</div>
-							</li>
-							<li class="sparks-info">
-								<h5> Site Traffic <span class="txt-color-purple"><i class="fa fa-arrow-circle-up"></i>&nbsp;45%</span></h5>
-								<div class="sparkline txt-color-purple hidden-mobile hidden-md hidden-sm">
-									110,150,300,130,400,240,220,310,220,300, 270, 210
-								</div>
-							</li>
-							<li class="sparks-info">
-								<h5> Site Orders <span class="txt-color-greenDark"><i class="fa fa-shopping-cart"></i>&nbsp;2447</span></h5>
-								<div class="sparkline txt-color-greenDark hidden-mobile hidden-md hidden-sm">
-									110,150,300,130,400,240,220,310,220,300, 270, 210
-								</div>
-							</li>
-						</ul>
-					</div>
-				</div>
+
 				<!-- widget grid -->
 				<section id="widget-grid" class="">
 
-					<!-- row -->
-					<div class="row">
-						<article class="col-sm-12">
-							<!-- new widget -->
-							<div class="jarviswidget" id="wid-id-0" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-fullscreenbutton="false" data-widget-colorbutton="false" data-widget-deletebutton="false">
-								<!-- widget options:
-								usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+					<div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-1" data-widget-editbutton="false">
+						<!-- widget options:
+                        usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
 
-								data-widget-colorbutton="false"
-								data-widget-editbutton="false"
-								data-widget-togglebutton="false"
-								data-widget-deletebutton="false"
-								data-widget-fullscreenbutton="false"
-								data-widget-custombutton="false"
-								data-widget-collapsed="true"
-								data-widget-sortable="false"
+                        data-widget-colorbutton="false"
+                        data-widget-editbutton="false"
+                        data-widget-togglebutton="false"
+                        data-widget-deletebutton="false"
+                        data-widget-fullscreenbutton="false"
+                        data-widget-custombutton="false"
+                        data-widget-collapsed="true"
+                        data-widget-sortable="false"
 
-								-->
-								<header>
-									<span class="widget-icon"> <i class="glyphicon glyphicon-stats txt-color-darken"></i> </span>
-									<h2>Live Feeds </h2>
+                        -->
+						<header>
+							<span class="widget-icon"> <i class="fa fa-table"></i> </span>
+							<h2>Column Filters </h2>
 
-									<ul class="nav nav-tabs pull-right in" id="myTab">
-										<li class="active">
-											<a data-toggle="tab" href="#s1"><i class="fa fa-clock-o"></i> <span class="hidden-mobile hidden-tablet">Live Stats</span></a>
-										</li>
+						</header>
 
-										<li>
-											<a data-toggle="tab" href="#s2"><i class="fa fa-facebook"></i> <span class="hidden-mobile hidden-tablet">Social Network</span></a>
-										</li>
+						<!-- widget div-->
+						<div>
 
-										<li>
-											<a data-toggle="tab" href="#s3"><i class="fa fa-dollar"></i> <span class="hidden-mobile hidden-tablet">Revenue</span></a>
-										</li>
-									</ul>
+							<!-- widget edit box -->
+							<div class="jarviswidget-editbox">
+								<!-- This area used as dropdown edit box -->
 
-								</header>
-
-								<!-- widget div-->
-								<div class="no-padding">
-									<!-- widget edit box -->
-									<div class="jarviswidget-editbox">
-
-										test
-									</div>
-									<!-- end widget edit box -->
-
-									<div class="widget-body">
-										<!-- content -->
-										<div id="myTabContent" class="tab-content">
-											<div class="tab-pane fade active in padding-10 no-padding-bottom" id="s1">
-												<div class="row no-space">
-													<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-														<span class="demo-liveupdate-1"> <span class="onoffswitch-title">Live switch</span> <span class="onoffswitch">
-																<input type="checkbox" name="start_interval" class="onoffswitch-checkbox" id="start_interval">
-																<label class="onoffswitch-label" for="start_interval"> 
-																	<span class="onoffswitch-inner" data-swchon-text="ON" data-swchoff-text="OFF"></span> 
-																	<span class="onoffswitch-switch"></span> </label> </span> </span>
-														<div id="updating-chart" class="chart-large txt-color-blue"></div>
-
-													</div>
-													<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 show-stats">
-
-														<div class="row">
-															<div class="col-xs-6 col-sm-6 col-md-12 col-lg-12"> <span class="text"> My Tasks <span class="pull-right">130/200</span> </span>
-																<div class="progress">
-																	<div class="progress-bar bg-color-blueDark" style="width: 65%;"></div>
-																</div> </div>
-															<div class="col-xs-6 col-sm-6 col-md-12 col-lg-12"> <span class="text"> Transfered <span class="pull-right">440 GB</span> </span>
-																<div class="progress">
-																	<div class="progress-bar bg-color-blue" style="width: 34%;"></div>
-																</div> </div>
-															<div class="col-xs-6 col-sm-6 col-md-12 col-lg-12"> <span class="text"> Bugs Squashed<span class="pull-right">77%</span> </span>
-																<div class="progress">
-																	<div class="progress-bar bg-color-blue" style="width: 77%;"></div>
-																</div> </div>
-															<div class="col-xs-6 col-sm-6 col-md-12 col-lg-12"> <span class="text"> User Testing <span class="pull-right">7 Days</span> </span>
-																<div class="progress">
-																	<div class="progress-bar bg-color-greenLight" style="width: 84%;"></div>
-																</div> </div>
-
-															<span class="show-stat-buttons"> <span class="col-xs-12 col-sm-6 col-md-6 col-lg-6"> <a href="javascript:void(0);" class="btn btn-default btn-block hidden-xs">Generate PDF</a> </span> <span class="col-xs-12 col-sm-6 col-md-6 col-lg-6"> <a href="javascript:void(0);" class="btn btn-default btn-block hidden-xs">Report a bug</a> </span> </span>
-
-														</div>
-
-													</div>
-												</div>
-
-												<div class="show-stat-microcharts">
-													<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-
-														<div class="easy-pie-chart txt-color-orangeDark" data-percent="33" data-pie-size="50">
-															<span class="percent percent-sign">35</span>
-														</div>
-														<span class="easy-pie-title"> Server Load <i class="fa fa-caret-up icon-color-bad"></i> </span>
-														<ul class="smaller-stat hidden-sm pull-right">
-															<li>
-																<span class="label bg-color-greenLight"><i class="fa fa-caret-up"></i> 97%</span>
-															</li>
-															<li>
-																<span class="label bg-color-blueLight"><i class="fa fa-caret-down"></i> 44%</span>
-															</li>
-														</ul>
-														<div class="sparkline txt-color-greenLight hidden-sm hidden-md pull-right" data-sparkline-type="line" data-sparkline-height="33px" data-sparkline-width="70px" data-fill-color="transparent">
-															130, 187, 250, 257, 200, 210, 300, 270, 363, 247, 270, 363, 247
-														</div>
-													</div>
-													<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-														<div class="easy-pie-chart txt-color-greenLight" data-percent="78.9" data-pie-size="50">
-															<span class="percent percent-sign">78.9 </span>
-														</div>
-														<span class="easy-pie-title"> Disk Space <i class="fa fa-caret-down icon-color-good"></i></span>
-														<ul class="smaller-stat hidden-sm pull-right">
-															<li>
-																<span class="label bg-color-blueDark"><i class="fa fa-caret-up"></i> 76%</span>
-															</li>
-															<li>
-																<span class="label bg-color-blue"><i class="fa fa-caret-down"></i> 3%</span>
-															</li>
-														</ul>
-														<div class="sparkline txt-color-blue hidden-sm hidden-md pull-right" data-sparkline-type="line" data-sparkline-height="33px" data-sparkline-width="70px" data-fill-color="transparent">
-															257, 200, 210, 300, 270, 363, 130, 187, 250, 247, 270, 363, 247
-														</div>
-													</div>
-													<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-														<div class="easy-pie-chart txt-color-blue" data-percent="23" data-pie-size="50">
-															<span class="percent percent-sign">23 </span>
-														</div>
-														<span class="easy-pie-title"> Transfered <i class="fa fa-caret-up icon-color-good"></i></span>
-														<ul class="smaller-stat hidden-sm pull-right">
-															<li>
-																<span class="label bg-color-darken">10GB</span>
-															</li>
-															<li>
-																<span class="label bg-color-blueDark"><i class="fa fa-caret-up"></i> 10%</span>
-															</li>
-														</ul>
-														<div class="sparkline txt-color-darken hidden-sm hidden-md pull-right" data-sparkline-type="line" data-sparkline-height="33px" data-sparkline-width="70px" data-fill-color="transparent">
-															200, 210, 363, 247, 300, 270, 130, 187, 250, 257, 363, 247, 270
-														</div>
-													</div>
-													<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-														<div class="easy-pie-chart txt-color-darken" data-percent="36" data-pie-size="50">
-															<span class="percent degree-sign">36 <i class="fa fa-caret-up"></i></span>
-														</div>
-														<span class="easy-pie-title"> Temperature <i class="fa fa-caret-down icon-color-good"></i></span>
-														<ul class="smaller-stat hidden-sm pull-right">
-															<li>
-																<span class="label bg-color-red"><i class="fa fa-caret-up"></i> 124</span>
-															</li>
-															<li>
-																<span class="label bg-color-blue"><i class="fa fa-caret-down"></i> 40 F</span>
-															</li>
-														</ul>
-														<div class="sparkline txt-color-red hidden-sm hidden-md pull-right" data-sparkline-type="line" data-sparkline-height="33px" data-sparkline-width="70px" data-fill-color="transparent">
-															2700, 3631, 2471, 2700, 3631, 2471, 1300, 1877, 2500, 2577, 2000, 2100, 3000
-														</div>
-													</div>
-												</div>
-
-											</div>
-											<!-- end s1 tab pane -->
-
-											<div class="tab-pane fade" id="s2">
-												<div class="widget-body-toolbar bg-color-white">
-
-													<form class="form-inline" role="form">
-
-														<div class="form-group">
-															<label class="sr-only" for="s123">Show From</label>
-															<input type="email" class="form-control input-sm" id="s123" placeholder="Show From">
-														</div>
-														<div class="form-group">
-															<input type="email" class="form-control input-sm" id="s124" placeholder="To">
-														</div>
-
-														<div class="btn-group hidden-phone pull-right">
-															<a class="btn dropdown-toggle btn-xs btn-default" data-toggle="dropdown"><i class="fa fa-cog"></i> More <span class="caret"> </span> </a>
-															<ul class="dropdown-menu pull-right">
-																<li>
-																	<a href="javascript:void(0);"><i class="fa fa-file-text-alt"></i> Export to PDF</a>
-																</li>
-																<li>
-																	<a href="javascript:void(0);"><i class="fa fa-question-sign"></i> Help</a>
-																</li>
-															</ul>
-														</div>
-
-													</form>
-
-												</div>
-												<div class="padding-10">
-													<div id="statsChart" class="chart-large has-legend-unique"></div>
-												</div>
-
-											</div>
-											<!-- end s2 tab pane -->
-
-											<div class="tab-pane fade" id="s3">
-
-												<div class="widget-body-toolbar bg-color-white smart-form" id="rev-toggles">
-
-													<div class="inline-group">
-
-														<label for="gra-0" class="checkbox">
-															<input type="checkbox" name="gra-0" id="gra-0" checked="checked">
-															<i></i> Target </label>
-														<label for="gra-1" class="checkbox">
-															<input type="checkbox" name="gra-1" id="gra-1" checked="checked">
-															<i></i> Actual </label>
-														<label for="gra-2" class="checkbox">
-															<input type="checkbox" name="gra-2" id="gra-2" checked="checked">
-															<i></i> Signups </label>
-													</div>
-
-													<div class="btn-group hidden-phone pull-right">
-														<a class="btn dropdown-toggle btn-xs btn-default" data-toggle="dropdown"><i class="fa fa-cog"></i> More <span class="caret"> </span> </a>
-														<ul class="dropdown-menu pull-right">
-															<li>
-																<a href="javascript:void(0);"><i class="fa fa-file-text-alt"></i> Export to PDF</a>
-															</li>
-															<li>
-																<a href="javascript:void(0);"><i class="fa fa-question-sign"></i> Help</a>
-															</li>
-														</ul>
-													</div>
-
-												</div>
-
-												<div class="padding-10">
-													<div id="flotcontainer" class="chart-large has-legend-unique"></div>
-												</div>
-											</div>
-											<!-- end s3 tab pane -->
-										</div>
-
-										<!-- end content -->
-									</div>
-
-								</div>
-								<!-- end widget div -->
 							</div>
-							<!-- end widget -->
+							<!-- end widget edit box -->
 
-						</article>
-					</div>
+							<!-- widget content -->
+							<div class="widget-body no-padding">
 
-					<!-- end row -->
+								<table id="datatable_fixed_column" class="table table-striped table-bordered" width="100%">
 
-					<!-- row -->
-
-					<div class="row">
-
-						<article class="col-sm-12 col-md-12 col-lg-6">
-
-							<!-- new widget -->
-							<div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-1" data-widget-editbutton="false" data-widget-fullscreenbutton="false">
-
-								<!-- widget options:
-								usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
-
-								data-widget-colorbutton="false"
-								data-widget-editbutton="false"
-								data-widget-togglebutton="false"
-								data-widget-deletebutton="false"
-								data-widget-fullscreenbutton="false"
-								data-widget-custombutton="false"
-								data-widget-collapsed="true"
-								data-widget-sortable="false"
-
-								-->
-
-								<header>
-									<span class="widget-icon"> <i class="fa fa-comments txt-color-white"></i> </span>
-									<h2> SmartChat </h2>
-									<div class="widget-toolbar">
-										<!-- add: non-hidden - to disable auto hide -->
-
-										<div class="btn-group">
-											<button class="btn dropdown-toggle btn-xs btn-success" data-toggle="dropdown">
-												Status <i class="fa fa-caret-down"></i>
-											</button>
-											<ul class="dropdown-menu pull-right js-status-update">
-												<li>
-													<a href="javascript:void(0);"><i class="fa fa-circle txt-color-green"></i> Online</a>
-												</li>
-												<li>
-													<a href="javascript:void(0);"><i class="fa fa-circle txt-color-red"></i> Busy</a>
-												</li>
-												<li>
-													<a href="javascript:void(0);"><i class="fa fa-circle txt-color-orange"></i> Away</a>
-												</li>
-												<li class="divider"></li>
-												<li>
-													<a href="javascript:void(0);"><i class="fa fa-power-off"></i> Log Off</a>
-												</li>
-											</ul>
-										</div>
-									</div>
-								</header>
-
-								<!-- widget div-->
-								<div>
-									<!-- widget edit box -->
-									<div class="jarviswidget-editbox">
-										<div>
-											<label>Title:</label>
-											<input type="text" />
-										</div>
-									</div>
-									<!-- end widget edit box -->
-
-									<div class="widget-body widget-hide-overflow no-padding">
-										<!-- content goes here -->
-
-										<!-- CHAT CONTAINER -->
-										<div id="chat-container">
-											<span class="chat-list-open-close"><i class="fa fa-user"></i><b>!</b></span>
-
-											<div class="chat-list-body custom-scroll">
-												<ul id="chat-users">
-													<li>
-														<a href="javascript:void(0);"><img src="{{asset('resources/assets/main/img/avatars/5.png')}}">
-													</li>
-													<li>
-														<a href="javascript:void(0);"><img src="{{asset('resources/assets/main/img/avatars/male.png')}}">
-													</li>
-													<li>
-														<a href="javascript:void(0);"><img src="{{asset('resources/assets/main/img/avatars/male.png')}}">
-													</li>
-													<li>
-														<a href="javascript:void(0);"><img src="{{asset('resources/assets/main/img/avatars/male.png')}}">
-													</li>
-													<li>
-														<a href="javascript:void(0);"><img src="{{asset('resources/assets/main/img/avatars/male.png')}}">
-													</li>
-													<li>
-														<a href="javascript:void(0);"><img src="{{asset('resources/assets/main/img/avatars/male.png')}}">
-													</li>
-													<li>
-														<a href="javascript:void(0);"><img src="{{asset('resources/assets/main/img/avatars/sunny.png')}}">
-													</li>
-													<li>
-														<a href="javascript:void(0);"><img src="{{asset('resources/assets/main/img/avatars/male.png')}}">
-													</li>
-												</ul>
-											</div>
-											<div class="chat-list-footer">
-
-												<div class="control-group">
-
-													<form class="smart-form">
-
-														<section>
-															<label class="input">
-																<input type="text" id="filter-chat-list" placeholder="Filter">
-															</label>
-														</section>
-
-													</form>
-
-												</div>
-
+									<thead>
+									<tr>
+										<th class="hasinput" style="width:17%">
+											<input type="text" class="form-control" placeholder="Filter Name" />
+										</th>
+										<th class="hasinput" style="width:18%">
+											<div class="input-group">
+												<input class="form-control" placeholder="Filter Position" type="text">
+												<span class="input-group-addon">
+																<span class="onoffswitch">
+																	<input type="checkbox" name="start_interval" class="onoffswitch-checkbox" id="st3">
+																	<label class="onoffswitch-label" for="st3">
+																		<span class="onoffswitch-inner" data-swchon-text="YES" data-swchoff-text="NO"></span>
+																		<span class="onoffswitch-switch"></span>
+																	</label>
+																</span>
+															</span>
 											</div>
 
-										</div>
 
-										<!-- CHAT BODY -->
-										<div id="chat-body" class="chat-body custom-scroll">
-											<ul>
-												<li class="message">
-													<img src="{{asset('resources/assets/main/img/avatars/5.png')}}" class="online">
-													<div class="message-text">
-														<time>
-															2014-01-13
-														</time> <a href="javascript:void(0);" class="username">Sadi Orlaf</a> Hey did you meet the new board of director? He's a bit of an geek if you ask me...anyway here is the report you requested. I am off to launch with Lisa and Andrew, you wanna join?
-														<p class="chat-file row">
-															<b class="pull-left col-sm-6"> <!--<i class="fa fa-spinner fa-spin"></i>--> <i class="fa fa-file"></i> report-2013-demographic-report-annual-earnings.xls </b>
-															<span class="col-sm-6 pull-right"> <a href="javascript:void(0);" class="btn btn-xs btn-default">cancel</a> <a href="javascript:void(0);" class="btn btn-xs btn-success">save</a> </span>
-														</p>
-														<p class="chat-file row">
-															<b class="pull-left col-sm-6"> <i class="fa fa-ok txt-color-green"></i> tobacco-report-2012.doc </b>
-															<span class="col-sm-6 pull-right"> <a href="javascript:void(0);" class="btn btn-xs btn-primary">open</a> </span>
-														</p> </div>
-												</li>
-												<li class="message">
-													<img src="{{asset('resources/assets/main/img/avatars/sunny.png')}}" class="online">
-													<div class="message-text">
-														<time>
-															2014-01-13
-														</time> <a href="javascript:void(0);" class="username">John Doe</a> Haha! Yeah I know what you mean. Thanks for the file Sadi! <i class="fa fa-smile-o txt-color-orange"></i> 
-													</div>
-												</li>
-											</ul>
+										</th>
+										<th class="hasinput" style="width:16%">
+											<input type="text" class="form-control" placeholder="Filter Office" />
+										</th>
+										<th class="hasinput" style="width:17%">
+											<input type="text" class="form-control" placeholder="Filter Age" />
+										</th>
+										<th class="hasinput icon-addon">
+											<input id="dateselect_filter" type="text" placeholder="Filter Date" class="form-control datepicker" data-dateformat="yy/mm/dd">
+											<label for="dateselect_filter" class="glyphicon glyphicon-calendar no-margin padding-top-15" rel="tooltip" title="" data-original-title="Filter Date"></label>
+										</th>
+										<th class="hasinput" style="width:16%">
+											<input type="text" class="form-control" placeholder="Filter Salary" />
+										</th>
+									</tr>
+									<tr>
+										<th data-class="expand">Name</th>
+										<th>Position</th>
+										<th data-hide="phone">Office</th>
+										<th data-hide="phone">Age</th>
+										<th data-hide="phone,tablet">Start date</th>
+										<th data-hide="phone,tablet">Salary</th>
+									</tr>
+									</thead>
 
-										</div>
+									<tbody>
+									<tr>
+										<td>Tiger Nixon</td>
+										<td>System Architect</td>
+										<td>Edinburgh</td>
+										<td>61</td>
+										<td>2014/12/12</td>
+										<td>$320,800</td>
+									</tr>
+									<tr>
+										<td>Garrett Winters</td>
+										<td>Accountant</td>
+										<td>Tokyo</td>
+										<td>63</td>
+										<td>2011/07/25</td>
+										<td>$170,750</td>
+									</tr>
+									<tr>
+										<td>Ashton Cox</td>
+										<td>Junior Technical Author</td>
+										<td>San Francisco</td>
+										<td>66</td>
+										<td>2014/01/12</td>
+										<td>$86,000</td>
+									</tr>
+									<tr>
+										<td>Cedric Kelly</td>
+										<td>Senior Javascript Developer</td>
+										<td>Edinburgh</td>
+										<td>22</td>
+										<td>2012/03/29</td>
+										<td>$433,060</td>
+									</tr>
+									<tr>
+										<td>Airi Satou</td>
+										<td>Accountant</td>
+										<td>Tokyo</td>
+										<td>33</td>
+										<td>2008/11/28</td>
+										<td>$162,700</td>
+									</tr>
+									<tr>
+										<td>Brielle Williamson</td>
+										<td>Integration Specialist</td>
+										<td>New York</td>
+										<td>61</td>
+										<td>2012/12/02</td>
+										<td>$372,000</td>
+									</tr>
+									<tr>
+										<td>Herrod Chandler</td>
+										<td>Sales Assistant</td>
+										<td>San Francisco</td>
+										<td>59</td>
+										<td>2012/08/06</td>
+										<td>$137,500</td>
+									</tr>
+									<tr>
+										<td>Rhona Davidson</td>
+										<td>Integration Specialist</td>
+										<td>Tokyo</td>
+										<td>55</td>
+										<td>2010/10/14</td>
+										<td>$327,900</td>
+									</tr>
+									<tr>
+										<td>Colleen Hurst</td>
+										<td>Javascript Developer</td>
+										<td>San Francisco</td>
+										<td>39</td>
+										<td>2014/09/15</td>
+										<td>$205,500</td>
+									</tr>
+									<tr>
+										<td>Sonya Frost</td>
+										<td>Software Engineer</td>
+										<td>Edinburgh</td>
+										<td>23</td>
+										<td>2008/12/13</td>
+										<td>$103,600</td>
+									</tr>
+									<tr>
+										<td>Jena Gaines</td>
+										<td>Office Manager</td>
+										<td>London</td>
+										<td>30</td>
+										<td>2008/12/19</td>
+										<td>$90,560</td>
+									</tr>
+									<tr>
+										<td>Quinn Flynn</td>
+										<td>Support Lead</td>
+										<td>Edinburgh</td>
+										<td>22</td>
+										<td>2013/03/03</td>
+										<td>$342,000</td>
+									</tr>
+									<tr>
+										<td>Charde Marshall</td>
+										<td>Regional Director</td>
+										<td>San Francisco</td>
+										<td>36</td>
+										<td>2008/10/16</td>
+										<td>$470,600</td>
+									</tr>
+									<tr>
+										<td>Haley Kennedy</td>
+										<td>Senior Marketing Designer</td>
+										<td>London</td>
+										<td>43</td>
+										<td>2012/12/18</td>
+										<td>$313,500</td>
+									</tr>
+									<tr>
+										<td>Tatyana Fitzpatrick</td>
+										<td>Regional Director</td>
+										<td>London</td>
+										<td>19</td>
+										<td>2010/03/17</td>
+										<td>$385,750</td>
+									</tr>
+									<tr>
+										<td>Michael Silva</td>
+										<td>Marketing Designer</td>
+										<td>London</td>
+										<td>66</td>
+										<td>2012/11/27</td>
+										<td>$198,500</td>
+									</tr>
+									<tr>
+										<td>Paul Byrd</td>
+										<td>Chief Financial Officer (CFO)</td>
+										<td>New York</td>
+										<td>64</td>
+										<td>2010/06/09</td>
+										<td>$725,000</td>
+									</tr>
+									<tr>
+										<td>Gloria Little</td>
+										<td>Systems Administrator</td>
+										<td>New York</td>
+										<td>59</td>
+										<td>2014/04/10</td>
+										<td>$237,500</td>
+									</tr>
+									<tr>
+										<td>Bradley Greer</td>
+										<td>Software Engineer</td>
+										<td>London</td>
+										<td>41</td>
+										<td>2012/10/13</td>
+										<td>$132,000</td>
+									</tr>
+									<tr>
+										<td>Dai Rios</td>
+										<td>Personnel Lead</td>
+										<td>Edinburgh</td>
+										<td>35</td>
+										<td>2012/09/26</td>
+										<td>$217,500</td>
+									</tr>
+									<tr>
+										<td>Jenette Caldwell</td>
+										<td>Development Lead</td>
+										<td>New York</td>
+										<td>30</td>
+										<td>2011/09/03</td>
+										<td>$345,000</td>
+									</tr>
+									<tr>
+										<td>Yuri Berry</td>
+										<td>Chief Marketing Officer (CMO)</td>
+										<td>New York</td>
+										<td>40</td>
+										<td>2014/06/25</td>
+										<td>$675,000</td>
+									</tr>
+									<tr>
+										<td>Caesar Vance</td>
+										<td>Pre-Sales Support</td>
+										<td>New York</td>
+										<td>21</td>
+										<td>2011/12/12</td>
+										<td>$106,450</td>
+									</tr>
+									<tr>
+										<td>Doris Wilder</td>
+										<td>Sales Assistant</td>
+										<td>Sidney</td>
+										<td>23</td>
+										<td>2010/09/20</td>
+										<td>$85,600</td>
+									</tr>
+									<tr>
+										<td>Angelica Ramos</td>
+										<td>Chief Executive Officer (CEO)</td>
+										<td>London</td>
+										<td>47</td>
+										<td>2014/10/09</td>
+										<td>$1,200,000</td>
+									</tr>
+									<tr>
+										<td>Gavin Joyce</td>
+										<td>Developer</td>
+										<td>Edinburgh</td>
+										<td>42</td>
+										<td>2010/12/22</td>
+										<td>$92,575</td>
+									</tr>
+									<tr>
+										<td>Jennifer Chang</td>
+										<td>Regional Director</td>
+										<td>Singapore</td>
+										<td>28</td>
+										<td>2010/11/14</td>
+										<td>$357,650</td>
+									</tr>
+									<tr>
+										<td>Brenden Wagner</td>
+										<td>Software Engineer</td>
+										<td>San Francisco</td>
+										<td>28</td>
+										<td>2011/06/07</td>
+										<td>$206,850</td>
+									</tr>
+									<tr>
+										<td>Fiona Green</td>
+										<td>Chief Operating Officer (COO)</td>
+										<td>San Francisco</td>
+										<td>48</td>
+										<td>2010/03/11</td>
+										<td>$850,000</td>
+									</tr>
+									<tr>
+										<td>Shou Itou</td>
+										<td>Regional Marketing</td>
+										<td>Tokyo</td>
+										<td>20</td>
+										<td>2011/08/14</td>
+										<td>$163,000</td>
+									</tr>
+									<tr>
+										<td>Michelle House</td>
+										<td>Integration Specialist</td>
+										<td>Sidney</td>
+										<td>37</td>
+										<td>2011/06/02</td>
+										<td>$95,400</td>
+									</tr>
+									<tr>
+										<td>Suki Burks</td>
+										<td>Developer</td>
+										<td>London</td>
+										<td>53</td>
+										<td>2014/10/22</td>
+										<td>$114,500</td>
+									</tr>
+									<tr>
+										<td>Prescott Bartlett</td>
+										<td>Technical Author</td>
+										<td>London</td>
+										<td>27</td>
+										<td>2011/05/07</td>
+										<td>$145,000</td>
+									</tr>
+									<tr>
+										<td>Gavin Cortez</td>
+										<td>Team Leader</td>
+										<td>San Francisco</td>
+										<td>22</td>
+										<td>2008/10/26</td>
+										<td>$235,500</td>
+									</tr>
+									<tr>
+										<td>Martena Mccray</td>
+										<td>Post-Sales support</td>
+										<td>Edinburgh</td>
+										<td>46</td>
+										<td>2011/03/09</td>
+										<td>$324,050</td>
+									</tr>
+									<tr>
+										<td>Unity Butler</td>
+										<td>Marketing Designer</td>
+										<td>San Francisco</td>
+										<td>47</td>
+										<td>2014/12/09</td>
+										<td>$85,675</td>
+									</tr>
+									<tr>
+										<td>Howard Hatfield</td>
+										<td>Office Manager</td>
+										<td>San Francisco</td>
+										<td>51</td>
+										<td>2008/12/16</td>
+										<td>$164,500</td>
+									</tr>
+									<tr>
+										<td>Hope Fuentes</td>
+										<td>Secretary</td>
+										<td>San Francisco</td>
+										<td>41</td>
+										<td>2010/02/12</td>
+										<td>$109,850</td>
+									</tr>
+									<tr>
+										<td>Vivian Harrell</td>
+										<td>Financial Controller</td>
+										<td>San Francisco</td>
+										<td>62</td>
+										<td>2014/02/14</td>
+										<td>$452,500</td>
+									</tr>
+									<tr>
+										<td>Timothy Mooney</td>
+										<td>Office Manager</td>
+										<td>London</td>
+										<td>37</td>
+										<td>2008/12/11</td>
+										<td>$136,200</td>
+									</tr>
+									<tr>
+										<td>Jackson Bradshaw</td>
+										<td>Director</td>
+										<td>New York</td>
+										<td>65</td>
+										<td>2008/09/26</td>
+										<td>$645,750</td>
+									</tr>
+									<tr>
+										<td>Olivia Liang</td>
+										<td>Support Engineer</td>
+										<td>Singapore</td>
+										<td>64</td>
+										<td>2011/02/03</td>
+										<td>$234,500</td>
+									</tr>
+									<tr>
+										<td>Bruno Nash</td>
+										<td>Software Engineer</td>
+										<td>London</td>
+										<td>38</td>
+										<td>2011/05/03</td>
+										<td>$163,500</td>
+									</tr>
+									<tr>
+										<td>Sakura Yamamoto</td>
+										<td>Support Engineer</td>
+										<td>Tokyo</td>
+										<td>37</td>
+										<td>2014/08/19</td>
+										<td>$139,575</td>
+									</tr>
+									<tr>
+										<td>Thor Walton</td>
+										<td>Developer</td>
+										<td>New York</td>
+										<td>61</td>
+										<td>2013/08/11</td>
+										<td>$98,540</td>
+									</tr>
+									<tr>
+										<td>Finn Camacho</td>
+										<td>Support Engineer</td>
+										<td>San Francisco</td>
+										<td>47</td>
+										<td>2014/07/07</td>
+										<td>$87,500</td>
+									</tr>
+									<tr>
+										<td>Serge Baldwin</td>
+										<td>Data Coordinator</td>
+										<td>Singapore</td>
+										<td>64</td>
+										<td>2012/04/09</td>
+										<td>$138,575</td>
+									</tr>
+									<tr>
+										<td>Zenaida Frank</td>
+										<td>Software Engineer</td>
+										<td>New York</td>
+										<td>63</td>
+										<td>2010/01/04</td>
+										<td>$125,250</td>
+									</tr>
+									<tr>
+										<td>Zorita Serrano</td>
+										<td>Software Engineer</td>
+										<td>San Francisco</td>
+										<td>56</td>
+										<td>2012/06/01</td>
+										<td>$115,000</td>
+									</tr>
+									<tr>
+										<td>Jennifer Acosta</td>
+										<td>Junior Javascript Developer</td>
+										<td>Edinburgh</td>
+										<td>43</td>
+										<td>2013/02/01</td>
+										<td>$75,650</td>
+									</tr>
+									<tr>
+										<td>Cara Stevens</td>
+										<td>Sales Assistant</td>
+										<td>New York</td>
+										<td>46</td>
+										<td>2011/12/06</td>
+										<td>$145,600</td>
+									</tr>
+									<tr>
+										<td>Hermione Butler</td>
+										<td>Regional Director</td>
+										<td>London</td>
+										<td>47</td>
+										<td>2011/03/21</td>
+										<td>$356,250</td>
+									</tr>
+									<tr>
+										<td>Lael Greer</td>
+										<td>Systems Administrator</td>
+										<td>London</td>
+										<td>21</td>
+										<td>2014/02/27</td>
+										<td>$103,500</td>
+									</tr>
+									<tr>
+										<td>Jonas Alexander</td>
+										<td>Developer</td>
+										<td>San Francisco</td>
+										<td>30</td>
+										<td>2010/07/14</td>
+										<td>$86,500</td>
+									</tr>
+									<tr>
+										<td>Shad Decker</td>
+										<td>Regional Director</td>
+										<td>Edinburgh</td>
+										<td>51</td>
+										<td>2008/11/13</td>
+										<td>$183,000</td>
+									</tr>
+									<tr>
+										<td>Michael Bruce</td>
+										<td>Javascript Developer</td>
+										<td>Singapore</td>
+										<td>29</td>
+										<td>2011/06/27</td>
+										<td>$183,000</td>
+									</tr>
+									<tr>
+										<td>Donna Snider</td>
+										<td>Customer Support</td>
+										<td>New York</td>
+										<td>27</td>
+										<td>2011/01/25</td>
+										<td>$112,000</td>
+									</tr>
+									</tbody>
 
-										<!-- CHAT FOOTER -->
-										<div class="chat-footer">
+								</table>
 
-											<!-- CHAT TEXTAREA -->
-											<div class="textarea-div">
-
-												<div class="typearea">
-													<textarea placeholder="Write a reply..." id="textarea-expand" class="custom-scroll"></textarea>
-												</div>
-
-											</div>
-
-											<!-- CHAT REPLY/SEND -->
-											<span class="textarea-controls">
-												<button class="btn btn-sm btn-primary pull-right">
-													Reply
-												</button> <span class="pull-right smart-form" style="margin-top: 3px; margin-right: 10px;"> <label class="checkbox pull-right">
-														<input type="checkbox" name="subscription" id="subscription">
-														<i></i>Press <strong> ENTER </strong> to send </label> </span> <a href="javascript:void(0);" class="pull-left"><i class="fa fa-camera fa-fw fa-lg"></i></a> </span>
-
-										</div>
-
-										<!-- end content -->
-									</div>
-
-								</div>
-								<!-- end widget div -->
 							</div>
-							<!-- end widget -->
+							<!-- end widget content -->
 
-							<!-- new widget -->
-							<div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-3" data-widget-colorbutton="false">
-
-								<!-- widget options:
-								usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
-
-								data-widget-colorbutton="false"
-								data-widget-editbutton="false"
-								data-widget-togglebutton="false"
-								data-widget-deletebutton="false"
-								data-widget-fullscreenbutton="false"
-								data-widget-custombutton="false"
-								data-widget-collapsed="true"
-								data-widget-sortable="false"
-
-								-->
-								<header>
-									<span class="widget-icon"> <i class="fa fa-calendar"></i> </span>
-									<h2> My Events </h2>
-									<div class="widget-toolbar">
-										<!-- add: non-hidden - to disable auto hide -->
-										<div class="btn-group">
-											<button class="btn dropdown-toggle btn-xs btn-default" data-toggle="dropdown">
-												Showing <i class="fa fa-caret-down"></i>
-											</button>
-											<ul class="dropdown-menu js-status-update pull-right">
-												<li>
-													<a href="javascript:void(0);" id="mt">Month</a>
-												</li>
-												<li>
-													<a href="javascript:void(0);" id="ag">Agenda</a>
-												</li>
-												<li>
-													<a href="javascript:void(0);" id="td">Today</a>
-												</li>
-											</ul>
-										</div>
-									</div>
-								</header>
-
-								<!-- widget div-->
-								<div>
-									<!-- widget edit box -->
-									<div class="jarviswidget-editbox">
-
-										<input class="form-control" type="text">
-
-									</div>
-									<!-- end widget edit box -->
-
-									<div class="widget-body no-padding">
-										<!-- content goes here -->
-										<div class="widget-body-toolbar">
-
-											<div id="calendar-buttons">
-
-												<div class="btn-group">
-													<a href="javascript:void(0)" class="btn btn-default btn-xs" id="btn-prev"><i class="fa fa-chevron-left"></i></a>
-													<a href="javascript:void(0)" class="btn btn-default btn-xs" id="btn-next"><i class="fa fa-chevron-right"></i></a>
-												</div>
-											</div>
-										</div>
-										<div id="calendar"></div>
-
-										<!-- end content -->
-									</div>
-
-								</div>
-								<!-- end widget div -->
-							</div>
-							<!-- end widget -->
-
-						</article>
-
-						<article class="col-sm-12 col-md-12 col-lg-6">
-
-							<!-- new widget -->
-							<div class="jarviswidget" id="wid-id-2" data-widget-colorbutton="false" data-widget-editbutton="false">
-
-								<!-- widget options:
-								usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
-
-								data-widget-colorbutton="false"
-								data-widget-editbutton="false"
-								data-widget-togglebutton="false"
-								data-widget-deletebutton="false"
-								data-widget-fullscreenbutton="false"
-								data-widget-custombutton="false"
-								data-widget-collapsed="true"
-								data-widget-sortable="false"
-
-								-->
-
-								<header>
-									<span class="widget-icon"> <i class="fa fa-map-marker"></i> </span>
-									<h2>Birds Eye</h2>
-									<div class="widget-toolbar hidden-mobile">
-										<span class="onoffswitch-title"><i class="fa fa-location-arrow"></i> Realtime</span>
-										<span class="onoffswitch">
-											<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" checked="checked" id="myonoffswitch">
-											<label class="onoffswitch-label" for="myonoffswitch"> <span class="onoffswitch-inner" data-swchon-text="YES" data-swchoff-text="NO"></span> <span class="onoffswitch-switch"></span> </label> </span>
-									</div>
-								</header>
-
-								<!-- widget div-->
-								<div>
-									<!-- widget edit box -->
-									<div class="jarviswidget-editbox">
-										<div>
-											<label>Title:</label>
-											<input type="text" />
-										</div>
-									</div>
-									<!-- end widget edit box -->
-
-									<div class="widget-body no-padding">
-										<!-- content goes here -->
-
-										<div id="vector-map" class="vector-map"></div>
-										<div id="heat-fill">
-											<span class="fill-a">0</span>
-
-											<span class="fill-b">5,000</span>
-										</div>
-
-										<table class="table table-striped table-hover table-condensed">
-											<thead>
-												<tr>
-													<th>Country</th>
-													<th>Visits</th>
-													<th class="text-align-center">User Activity</th>
-													<th class="text-align-center hidden-xs">Online</th>
-													<th class="text-align-center">Demographic</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td><a href="javascript:void(0);">USA</a></td>
-													<td>4,977</td>
-													<td class="text-align-center">
-													<div class="sparkline txt-color-blue text-align-center" data-sparkline-height="22px" data-sparkline-width="90px" data-sparkline-barwidth="2">
-														2700, 3631, 2471, 1300, 1877, 2500, 2577, 2700, 3631, 2471, 2000, 2100, 3000
-													</div></td>
-													<td class="text-align-center hidden-xs">143</td>
-													<td class="text-align-center">
-													<div class="sparkline display-inline" data-sparkline-type='pie' data-sparkline-piecolor='["#E979BB", "#57889C"]' data-sparkline-offset="90" data-sparkline-piesize="23px">
-														17,83
-													</div>
-													<div class="btn-group display-inline pull-right text-align-left hidden-tablet">
-														<button class="btn btn-xs btn-default dropdown-toggle" data-toggle="dropdown">
-															<i class="fa fa-cog fa-lg"></i>
-														</button>
-														<ul class="dropdown-menu dropdown-menu-xs pull-right">
-															<li>
-																<a href="javascript:void(0);"><i class="fa fa-file fa-lg fa-fw txt-color-greenLight"></i> <u>P</u>DF</a>
-															</li>
-															<li>
-																<a href="javascript:void(0);"><i class="fa fa-times fa-lg fa-fw txt-color-red"></i> <u>D</u>elete</a>
-															</li>
-															<li class="divider"></li>
-															<li class="text-align-center">
-																<a href="javascript:void(0);">Cancel</a>
-															</li>
-														</ul>
-													</div></td>
-												</tr>
-												<tr>
-													<td><a href="javascript:void(0);">Australia</a></td>
-													<td>4,873</td>
-													<td class="text-align-center">
-													<div class="sparkline txt-color-blue text-align-center" data-sparkline-height="22px" data-sparkline-width="90px" data-sparkline-barwidth="2">
-														1000, 1100, 3030, 1300, -1877, -2500, -2577, -2700, 3631, 2471, 4700, 1631, 2471
-													</div></td>
-													<td class="text-align-center hidden-xs">247</td>
-													<td class="text-align-center">
-													<div class="sparkline display-inline" data-sparkline-type='pie' data-sparkline-piecolor='["#E979BB", "#57889C"]' data-sparkline-offset="90" data-sparkline-piesize="23px">
-														22,88
-													</div>
-													<div class="btn-group display-inline pull-right text-align-left hidden-tablet">
-														<button class="btn btn-xs btn-default dropdown-toggle" data-toggle="dropdown">
-															<i class="fa fa-cog fa-lg"></i>
-														</button>
-														<ul class="dropdown-menu dropdown-menu-xs pull-right">
-															<li>
-																<a href="javascript:void(0);"><i class="fa fa-file fa-lg fa-fw txt-color-greenLight"></i> <u>P</u>DF</a>
-															</li>
-															<li>
-																<a href="javascript:void(0);"><i class="fa fa-times fa-lg fa-fw txt-color-red"></i> <u>D</u>elete</a>
-															</li>
-															<li class="divider"></li>
-															<li class="text-align-center">
-																<a href="javascript:void(0);">Cancel</a>
-															</li>
-														</ul>
-													</div></td>
-												</tr>
-												<tr>
-													<td><a href="javascript:void(0);">India</a></td>
-													<td>3,671</td>
-													<td class="text-align-center">
-													<div class="sparkline txt-color-blue text-align-center" data-sparkline-height="22px" data-sparkline-width="90px" data-sparkline-barwidth="2">
-														3631, 1471, 2400, 3631, 471, 1300, 1177, 2500, 2577, 3000, 4100, 3000, 7700
-													</div></td>
-													<td class="text-align-center hidden-xs">373</td>
-													<td class="text-align-center">
-													<div class="sparkline display-inline" data-sparkline-type='pie' data-sparkline-piecolor='["#E979BB", "#57889C"]' data-sparkline-offset="90" data-sparkline-piesize="23px">
-														10,90
-													</div>
-													<div class="btn-group display-inline pull-right text-align-left hidden-tablet">
-														<button class="btn btn-xs btn-default dropdown-toggle" data-toggle="dropdown">
-															<i class="fa fa-cog fa-lg"></i>
-														</button>
-														<ul class="dropdown-menu dropdown-menu-xs pull-right">
-															<li>
-																<a href="javascript:void(0);"><i class="fa fa-file fa-lg fa-fw txt-color-greenLight"></i> <u>P</u>DF</a>
-															</li>
-															<li>
-																<a href="javascript:void(0);"><i class="fa fa-times fa-lg fa-fw txt-color-red"></i> <u>D</u>elete</a>
-															</li>
-															<li class="divider"></li>
-															<li class="text-align-center">
-																<a href="javascript:void(0);">Cancel</a>
-															</li>
-														</ul>
-													</div></td>
-												</tr>
-												<tr>
-													<td><a href="javascript:void(0);">Brazil</a></td>
-													<td>2,476</td>
-													<td class="text-align-center">
-													<div class="sparkline txt-color-blue text-align-center" data-sparkline-height="22px" data-sparkline-width="90px" data-sparkline-barwidth="2">
-														2700, 1877, 2500, 2577, 2000, 3631, 2471, -2700, -3631, 2471, 1300, 2100, 3000,
-													</div></td>
-													<td class="text-align-center hidden-xs ">741</td>
-													<td class="text-align-center">
-													<div class="sparkline display-inline" data-sparkline-type='pie' data-sparkline-piecolor='["#E979BB", "#57889C"]' data-sparkline-offset="90" data-sparkline-piesize="23px">
-														34,66
-													</div>
-													<div class="btn-group display-inline pull-right text-align-left hidden-tablet">
-														<button class="btn btn-xs btn-default dropdown-toggle" data-toggle="dropdown">
-															<i class="fa fa-cog fa-lg"></i>
-														</button>
-														<ul class="dropdown-menu dropdown-menu-xs pull-right">
-															<li>
-																<a href="javascript:void(0);"><i class="fa fa-file fa-lg fa-fw txt-color-greenLight"></i> <u>P</u>DF</a>
-															</li>
-															<li>
-																<a href="javascript:void(0);"><i class="fa fa-times fa-lg fa-fw txt-color-red"></i> <u>D</u>elete</a>
-															</li>
-															<li class="divider"></li>
-															<li class="text-align-center">
-																<a href="javascript:void(0);">Cancel</a>
-															</li>
-														</ul>
-													</div></td>
-												</tr>
-												<tr>
-													<td><a href="javascript:void(0);">Turkey</a></td>
-													<td>1,476</td>
-													<td class="text-align-center">
-													<div class="sparkline txt-color-blue text-align-center" data-sparkline-height="22px" data-sparkline-width="90px" data-sparkline-barwidth="2">
-														1300, 1877, 2500, 2577, 2000, 2100, 3000, -2471, -2700, -3631, -2471, 2700, 3631
-													</div></td>
-													<td class="text-align-center hidden-xs">123</td>
-													<td class="text-align-center">
-													<div class="sparkline display-inline" data-sparkline-type='pie' data-sparkline-piecolor='["#E979BB", "#57889C"]' data-sparkline-offset="90" data-sparkline-piesize="23px">
-														75,25
-													</div>
-													<div class="btn-group display-inline pull-right text-align-left hidden-tablet">
-														<button class="btn btn-xs btn-default dropdown-toggle" data-toggle="dropdown">
-															<i class="fa fa-cog fa-lg"></i>
-														</button>
-														<ul class="dropdown-menu dropdown-menu-xs pull-right">
-															<li>
-																<a href="javascript:void(0);"><i class="fa fa-file fa-lg fa-fw txt-color-greenLight"></i> <u>P</u>DF</a>
-															</li>
-															<li>
-																<a href="javascript:void(0);"><i class="fa fa-times fa-lg fa-fw txt-color-red"></i> <u>D</u>elete</a>
-															</li>
-															<li class="divider"></li>
-															<li class="text-align-center">
-																<a href="javascript:void(0);">Cancel</a>
-															</li>
-														</ul>
-													</div></td>
-												</tr>
-												<tr>
-													<td><a href="javascript:void(0);">Canada</a></td>
-													<td>146</td>
-													<td class="text-align-center">
-													<div class="sparkline txt-color-orange text-align-center" data-sparkline-height="22px" data-sparkline-width="90px" data-sparkline-barwidth="2">
-														5, 34, 10, 1, 4, 6, -9, -1, 0, 0, 5, 6, 7
-													</div></td>
-													<td class="text-align-center hidden-xs">23</td>
-													<td class="text-align-center">
-													<div class="sparkline display-inline" data-sparkline-type='pie' data-sparkline-piecolor='["#E979BB", "#57889C"]' data-sparkline-offset="90" data-sparkline-piesize="23px">
-														50,50
-													</div>
-													<div class="btn-group display-inline pull-right text-align-left hidden-tablet">
-														<button class="btn btn-xs btn-default dropdown-toggle" data-toggle="dropdown">
-															<i class="fa fa-cog fa-lg"></i>
-														</button>
-														<ul class="dropdown-menu dropdown-menu-xs pull-right">
-															<li>
-																<a href="javascript:void(0);"><i class="fa fa-file fa-lg fa-fw txt-color-greenLight"></i> <u>P</u>DF</a>
-															</li>
-															<li>
-																<a href="javascript:void(0);"><i class="fa fa-times fa-lg fa-fw txt-color-red"></i> <u>D</u>elete</a>
-															</li>
-															<li class="divider"></li>
-															<li class="text-align-center">
-																<a href="javascript:void(0);">Cancel</a>
-															</li>
-														</ul>
-													</div></td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan=5>
-													<ul class="pagination pagination-xs no-margin">
-														<li class="prev disabled">
-															<a href="javascript:void(0);">Previous</a>
-														</li>
-														<li class="active">
-															<a href="javascript:void(0);">1</a>
-														</li>
-														<li>
-															<a href="javascript:void(0);">2</a>
-														</li>
-														<li>
-															<a href="javascript:void(0);">3</a>
-														</li>
-														<li class="next">
-															<a href="javascript:void(0);">Next</a>
-														</li>
-													</ul></td>
-												</tr>
-											</tfoot>
-										</table>
-
-										<!-- end content -->
-
-									</div>
-
-								</div>
-								<!-- end widget div -->
-							</div>
-							<!-- end widget -->
-
-							<!-- new widget -->
-							<div class="jarviswidget jarviswidget-color-blue" id="wid-id-4" data-widget-editbutton="false" data-widget-colorbutton="false">
-
-								<!-- widget options:
-								usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
-
-								data-widget-colorbutton="false"
-								data-widget-editbutton="false"
-								data-widget-togglebutton="false"
-								data-widget-deletebutton="false"
-								data-widget-fullscreenbutton="false"
-								data-widget-custombutton="false"
-								data-widget-collapsed="true"
-								data-widget-sortable="false"
-
-								-->
-
-								<header>
-									<span class="widget-icon"> <i class="fa fa-check txt-color-white"></i> </span>
-									<h2> ToDo's </h2>
-									<!-- <div class="widget-toolbar">
-									add: non-hidden - to disable auto hide
-
-									</div>-->
-								</header>
-
-								<!-- widget div-->
-								<div>
-									<!-- widget edit box -->
-									<div class="jarviswidget-editbox">
-										<div>
-											<label>Title:</label>
-											<input type="text" />
-										</div>
-									</div>
-									<!-- end widget edit box -->
-
-									<div class="widget-body no-padding smart-form">
-										<!-- content goes here -->
-										<h5 class="todo-group-title"><i class="fa fa-warning"></i> Critical Tasks (<small class="num-of-tasks">1</small>)</h5>
-										<ul id="sortable1" class="todo">
-											<li>
-												<span class="handle"> <label class="checkbox">
-														<input type="checkbox" name="checkbox-inline">
-														<i></i> </label> </span>
-												<p>
-													<strong>Ticket #17643</strong> - Hotfix for WebApp interface issue [<a href="javascript:void(0);" class="font-xs">More Details</a>] <span class="text-muted">Sea deep blessed bearing under darkness from God air living isn't. </span>
-													<span class="date">Jan 1, 2014</span>
-												</p>
-											</li>
-										</ul>
-										<h5 class="todo-group-title"><i class="fa fa-exclamation"></i> Important Tasks (<small class="num-of-tasks">3</small>)</h5>
-										<ul id="sortable2" class="todo">
-											<li>
-												<span class="handle"> <label class="checkbox">
-														<input type="checkbox" name="checkbox-inline">
-														<i></i> </label> </span>
-												<p>
-													<strong>Ticket #1347</strong> - Inbox email is being sent twice <small>(bug fix)</small> [<a href="javascript:void(0);" class="font-xs">More Details</a>] <span class="date">Nov 22, 2013</span>
-												</p>
-											</li>
-											<li>
-												<span class="handle"> <label class="checkbox">
-														<input type="checkbox" name="checkbox-inline">
-														<i></i> </label> </span>
-												<p>
-													<strong>Ticket #1314</strong> - Call customer support re: Issue <a href="javascript:void(0);" class="font-xs">#6134</a><small>(code review)</small>
-													<span class="date">Nov 22, 2013</span>
-												</p>
-											</li>
-											<li>
-												<span class="handle"> <label class="checkbox">
-														<input type="checkbox" name="checkbox-inline">
-														<i></i> </label> </span>
-												<p>
-													<strong>Ticket #17643</strong> - Hotfix for WebApp interface issue [<a href="javascript:void(0);" class="font-xs">More Details</a>] <span class="text-muted">Sea deep blessed bearing under darkness from God air living isn't. </span>
-													<span class="date">Jan 1, 2014</span>
-												</p>
-											</li>
-										</ul>
-
-										<h5 class="todo-group-title"><i class="fa fa-check"></i> Completed Tasks (<small class="num-of-tasks">1</small>)</h5>
-										<ul id="sortable3" class="todo">
-											<li class="complete">
-												<span class="handle" style="display:none"> <label class="checkbox state-disabled">
-														<input type="checkbox" name="checkbox-inline" checked="checked" disabled="disabled">
-														<i></i> </label> </span>
-												<p>
-													<strong>Ticket #17643</strong> - Hotfix for WebApp interface issue [<a href="javascript:void(0);" class="font-xs">More Details</a>] <span class="text-muted">Sea deep blessed bearing under darkness from God air living isn't. </span>
-													<span class="date">Jan 1, 2014</span>
-												</p>
-											</li>
-										</ul>
-
-										<!-- end content -->
-									</div>
-
-								</div>
-								<!-- end widget div -->
-							</div>
-							<!-- end widget -->
-
-						</article>
+						</div>
+						<!-- end widget div -->
 
 					</div>
-
-					<!-- end row -->
-
+					<!-- end widget -->
 				</section>
 				<!-- end widget grid -->
 
@@ -957,8 +596,192 @@
 			<!-- END MAIN CONTENT -->
 
 		</div>
+		</div>
 		<!-- END MAIN PANEL -->
 
 	@include('main.layout.footer')
+	<!-- PAGE RELATED PLUGIN(S) -->
+	<script src="{{asset('resources/assets/main/js/plugin/datatables/jquery.dataTables.min.js')}}"></script>
+	<script src="{{asset('resources/assets/main/js/plugin/datatables/dataTables.colVis.min.js')}}"></script>
+	<script src="{{asset('resources/assets/main/js/plugin/datatables/dataTables.tableTools.min.js')}}"></script>
+	<script src="{{asset('resources/assets/main/js/plugin/datatables/dataTables.bootstrap.min.js')}}"></script>
+	<script src="{{asset('resources/assets/main/js/plugin/datatable-responsive/datatables.responsive.min.js')}}"></script>
+
+	<script>
+
+        // DO NOT REMOVE : GLOBAL FUNCTIONS!
+
+        $(document).ready(function() {
+
+            pageSetUp();
+
+            /* // DOM Position key index //
+
+            l - Length changing (dropdown)
+            f - Filtering input (search)
+            t - The Table! (datatable)
+            i - Information (records)
+            p - Pagination (paging)
+            r - pRocessing
+            < and > - div elements
+            <"#id" and > - div with an id
+            <"class" and > - div with a class
+            <"#id.class" and > - div with an id and class
+
+            Also see: http://legacy.datatables.net/usage/features
+            */
+
+            /* BASIC ;*/
+            var responsiveHelper_dt_basic = undefined;
+            var responsiveHelper_datatable_fixed_column = undefined;
+            var responsiveHelper_datatable_col_reorder = undefined;
+            var responsiveHelper_datatable_tabletools = undefined;
+
+            var breakpointDefinition = {
+                tablet : 1024,
+                phone : 480
+            };
+
+            $('#dt_basic').dataTable({
+                "sDom": "<'dt-toolbar'<'col-xs-12 col-sm-6'f><'col-sm-6 col-xs-12 hidden-xs'l>r>"+
+                    "t"+
+                    "<'dt-toolbar-footer'<'col-sm-6 col-xs-12 hidden-xs'i><'col-xs-12 col-sm-6'p>>",
+                "autoWidth" : true,
+                "oLanguage": {
+                    "sSearch": '<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>'
+                },
+                "preDrawCallback" : function() {
+                    // Initialize the responsive datatables helper once.
+                    if (!responsiveHelper_dt_basic) {
+                        responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
+                    }
+                },
+                "rowCallback" : function(nRow) {
+                    responsiveHelper_dt_basic.createExpandIcon(nRow);
+                },
+                "drawCallback" : function(oSettings) {
+                    responsiveHelper_dt_basic.respond();
+                }
+            });
+
+            /* END BASIC */
+
+            /* COLUMN FILTER  */
+            var otable = $('#datatable_fixed_column').DataTable({
+                //"bFilter": false,
+                //"bInfo": false,
+                //"bLengthChange": false
+                //"bAutoWidth": false,
+                //"bPaginate": false,
+                //"bStateSave": true // saves sort state using localStorage
+                "sDom": "<'dt-toolbar'<'col-xs-12 col-sm-6 hidden-xs'f><'col-sm-6 col-xs-12 hidden-xs'<'toolbar'>>r>"+
+                    "t"+
+                    "<'dt-toolbar-footer'<'col-sm-6 col-xs-12 hidden-xs'i><'col-xs-12 col-sm-6'p>>",
+                "autoWidth" : true,
+                "oLanguage": {
+                    "sSearch": '<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>'
+                },
+                "preDrawCallback" : function() {
+                    // Initialize the responsive datatables helper once.
+                    if (!responsiveHelper_datatable_fixed_column) {
+                        responsiveHelper_datatable_fixed_column = new ResponsiveDatatablesHelper($('#datatable_fixed_column'), breakpointDefinition);
+                    }
+                },
+                "rowCallback" : function(nRow) {
+                    responsiveHelper_datatable_fixed_column.createExpandIcon(nRow);
+                },
+                "drawCallback" : function(oSettings) {
+                    responsiveHelper_datatable_fixed_column.respond();
+                }
+
+            });
+
+            // Apply the filter
+            $("#datatable_fixed_column thead th input[type=text]").on( 'keyup change', function () {
+
+                otable
+                    .column( $(this).parent().index()+':visible' )
+                    .search( this.value )
+                    .draw();
+
+            } );
+            /* END COLUMN FILTER */
+
+            /* COLUMN SHOW - HIDE */
+            $('#datatable_col_reorder').dataTable({
+                "sDom": "<'dt-toolbar'<'col-xs-12 col-sm-6'f><'col-sm-6 col-xs-6 hidden-xs'C>r>"+
+                    "t"+
+                    "<'dt-toolbar-footer'<'col-sm-6 col-xs-12 hidden-xs'i><'col-sm-6 col-xs-12'p>>",
+                "autoWidth" : true,
+                "oLanguage": {
+                    "sSearch": '<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>'
+                },
+                "preDrawCallback" : function() {
+                    // Initialize the responsive datatables helper once.
+                    if (!responsiveHelper_datatable_col_reorder) {
+                        responsiveHelper_datatable_col_reorder = new ResponsiveDatatablesHelper($('#datatable_col_reorder'), breakpointDefinition);
+                    }
+                },
+                "rowCallback" : function(nRow) {
+                    responsiveHelper_datatable_col_reorder.createExpandIcon(nRow);
+                },
+                "drawCallback" : function(oSettings) {
+                    responsiveHelper_datatable_col_reorder.respond();
+                }
+            });
+
+            /* END COLUMN SHOW - HIDE */
+
+            /* TABLETOOLS */
+            $('#datatable_tabletools').dataTable({
+
+                // Tabletools options:
+                //   https://datatables.net/extensions/tabletools/button_options
+                "sDom": "<'dt-toolbar'<'col-xs-12 col-sm-6'f><'col-sm-6 col-xs-6 hidden-xs'T>r>"+
+                    "t"+
+                    "<'dt-toolbar-footer'<'col-sm-6 col-xs-12 hidden-xs'i><'col-sm-6 col-xs-12'p>>",
+                "oLanguage": {
+                    "sSearch": '<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>'
+                },
+                "oTableTools": {
+                    "aButtons": [
+                        "copy",
+                        "csv",
+                        "xls",
+                        {
+                            "sExtends": "pdf",
+                            "sTitle": "SmartAdmin_PDF",
+                            "sPdfMessage": "SmartAdmin PDF Export",
+                            "sPdfSize": "letter"
+                        },
+                        {
+                            "sExtends": "print",
+                            "sMessage": "Generated by SmartAdmin <i>(press Esc to close)</i>"
+                        }
+                    ],
+                    "sSwfPath": "js/plugin/datatables/swf/copy_csv_xls_pdf.swf"
+                },
+                "autoWidth" : true,
+                "preDrawCallback" : function() {
+                    // Initialize the responsive datatables helper once.
+                    if (!responsiveHelper_datatable_tabletools) {
+                        responsiveHelper_datatable_tabletools = new ResponsiveDatatablesHelper($('#datatable_tabletools'), breakpointDefinition);
+                    }
+                },
+                "rowCallback" : function(nRow) {
+                    responsiveHelper_datatable_tabletools.createExpandIcon(nRow);
+                },
+                "drawCallback" : function(oSettings) {
+                    responsiveHelper_datatable_tabletools.respond();
+                }
+            });
+
+            /* END TABLETOOLS */
+
+        })
+
+	</script>
+
 	</body>
 </html>
+

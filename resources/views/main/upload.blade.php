@@ -73,9 +73,7 @@ data-widget-colorbutton="false"
 
 																<div class="col-sm-12">
 																	<div hidden class="alert alert-danger alert-upload fade in">
-																		<button class="closee close" data-dismiss="alert">
-																			×
-																		</button>
+
 																		<i class="fa-fw fa fa-times"></i>
 																		<strong>Error!</strong> <span class="errror-text"></span>
 																	</div>
@@ -101,10 +99,10 @@ data-widget-colorbutton="false"
                                                                             <tr>
                                                                                 <td>
                                                                                     <p class="txt-color-green">
-                                                                                       Amount of rows
+                                                                                       File size
                                                                                     </p></td>
 
-                                                                                <td><p>30,000</p></td>
+                                                                                <td><p>100mb</p></td>
                                                                             </tr>
 
                                                                             <!-- new tr -->
@@ -149,21 +147,84 @@ data-widget-colorbutton="false"
 																<div class="col-sm-4">
 																	<div class="form-group">
 																		<div class="input-group">
-																			<span class="input-group-addon"><i class="fa fa-flag fa-lg fa-fw"></i></span>
-																			<select name="country" class="form-control input-lg">
-																				<option value="" selected="selected">Select Country</option>
-																				<option value="United States">United States</option>
-																				<option value="United Kingdom">United Kingdom</option>
-																				<option value="Afghanistan">Afghanistan</option>
-																				<option value="Albania">Albania</option>
-																				<option value="Algeria">Algeria</option>
-																				<option value="American Samoa">American Samoa</option>
+																			<p>Product title</p>
+																		</div>
+																	</div>
+
+																</div>
+																<div class="col-sm-8">
+																	<div class="form-group">
+																		<div class="input-group">
+																			<span class="input-group-addon"><i class="fa fa-map-marker fa-lg fa-fw"></i></span>
+																			<select class="form-control input-lg" name="city">
+																				<option value="" selected="selected">Select City</option>
+																				<option>Amsterdam</option>
+																				<option>Atlanta</option>
+																				<option>Baltimore</option>
 
 																			</select>
 																		</div>
 																	</div>
-																</div>
-																<div class="col-sm-4">
+																	<div class="form-group">
+																		<div class="input-group">
+																			<span class="input-group-addon"><i class="fa fa-map-marker fa-lg fa-fw"></i></span>
+																			<select class="form-control input-lg" name="city">
+																				<option value="" selected="selected">Select City</option>
+																				<option>Amsterdam</option>
+																				<option>Atlanta</option>
+																				<option>Baltimore</option>
+
+																			</select>
+																		</div>
+																	</div>
+																	<div class="form-group">
+																		<div class="input-group">
+																			<span class="input-group-addon"><i class="fa fa-map-marker fa-lg fa-fw"></i></span>
+																			<select class="form-control input-lg" name="city">
+																				<option value="" selected="selected">Select City</option>
+																				<option>Amsterdam</option>
+																				<option>Atlanta</option>
+																				<option>Baltimore</option>
+
+																			</select>
+																		</div>
+																	</div>
+																	<div class="form-group">
+																		<div class="input-group">
+																			<span class="input-group-addon"><i class="fa fa-map-marker fa-lg fa-fw"></i></span>
+																			<select class="form-control input-lg" name="city">
+																				<option value="" selected="selected">Select City</option>
+																				<option>Amsterdam</option>
+																				<option>Atlanta</option>
+																				<option>Baltimore</option>
+
+																			</select>
+																		</div>
+																	</div>
+																	<div class="form-group">
+																		<div class="input-group">
+																			<span class="input-group-addon"><i class="fa fa-map-marker fa-lg fa-fw"></i></span>
+																			<select class="form-control input-lg" name="city">
+																				<option value="" selected="selected">Select City</option>
+																				<option>Amsterdam</option>
+																				<option>Atlanta</option>
+																				<option>Baltimore</option>
+
+																			</select>
+																		</div>
+																	</div>
+																	<div class="form-group">
+																		<div class="input-group">
+																			<span class="input-group-addon"><i class="fa fa-map-marker fa-lg fa-fw"></i></span>
+																			<select class="form-control input-lg" name="city">
+																				<option value="" selected="selected">Select City</option>
+																				<option>Amsterdam</option>
+																				<option>Atlanta</option>
+																				<option>Baltimore</option>
+
+																			</select>
+																		</div>
+																	</div>
 																	<div class="form-group">
 																		<div class="input-group">
 																			<span class="input-group-addon"><i class="fa fa-map-marker fa-lg fa-fw"></i></span>
@@ -177,32 +238,7 @@ data-widget-colorbutton="false"
 																		</div>
 																	</div>
 																</div>
-																<div class="col-sm-4">
-																	<div class="form-group">
-																		<div class="input-group">
-																			<span class="input-group-addon"><i class="fa fa-envelope-o fa-lg fa-fw"></i></span>
-																			<input class="form-control input-lg" placeholder="Postal Code" type="text" name="postal" id="postal">
-																		</div>
-																	</div>
-																</div>
-															</div>
-															<div class="row">
-																<div class="col-sm-6">
-																	<div class="form-group">
-																		<div class="input-group">
-																			<span class="input-group-addon"><i class="fa fa-phone fa-lg fa-fw"></i></span>
-																			<input class="form-control input-lg" data-mask="+99 (999) 999-9999" data-mask-placeholder= "X" placeholder="+1" type="text" name="wphone" id="wphone">
-																		</div>
-																	</div>
-																</div>
-																<div class="col-sm-6">
-																	<div class="form-group">
-																		<div class="input-group">
-																			<span class="input-group-addon"><i class="fa fa-mobile fa-lg fa-fw"></i></span>
-																			<input class="form-control input-lg" data-mask="+99 (999) 999-9999" data-mask-placeholder= "X" placeholder="+01" type="text" name="hphone" id="hphone">
-																		</div>
-																	</div>
-																</div>
+
 															</div>
 														</div>
 														<div class="tab-pane" id="tab3">
@@ -283,14 +319,20 @@ data-widget-colorbutton="false"
 <script src={{ asset('resources/assets/plupload/moxie.min.js') }}></script>
 <script src={{ asset('resources/assets/plupload/plupload.js') }}></script>
 <script src={{ asset('resources/assets/plupload/upload.js') }}></script>
+
+
+<script>
+    var fileColumns;
+</script>
 <script type="text/javascript">
 	var maxFiles = 1;
     var uploader = new plupload.Uploader({
         browse_button: 'browse', // this can be an id of a DOM element or the DOM element itself
         url: "{{route('uploadscanfile')}}?_token={{ csrf_token() }}",
         multi_selection:false,
-        chunk_size: '4mb',
+        chunk_size: '10mb',
 		max_file_count: 1,
+		max_file_size: '100mb',
         filters : [
             {title : "Excel files", extensions : "csv,xls,xlsx"}
         ]
@@ -311,31 +353,33 @@ data-widget-colorbutton="false"
     });
 
     uploader.bind('UploadProgress', function(up, file) {
-        if (file.percent != 100)
-		{
-            $("#start-upload").hide();
-            $("#browse").hide();
-            $(".moxie-shim").hide();
-            $("#reset").hide();
-            $(".progress").show();
-            $(".progress-bar").css({"width":file.percent+"%"});
-        }
-        else
-		{
-            $("#reset").show();
-            $(".progress").hide();
-        }
-		// if (uploader.files.length > 0)
+        $(".alert-upload").hide();
+		$("#start-upload").hide();
+		$("#browse").hide();
+		$(".moxie-shim").hide();
+		$("#reset").hide();
+		$(".progress").show();
+		$(".progress-bar").css({"width":file.percent+"%"});
+
+
+        // if (uploader.files.length > 0)
         // 	document.getElementById(file.id).getElementsByTagName('b')[0].innerHTML = '<span >' + file.percent + "%</span>";
     });
 
+    uploader.bind('FileUploaded', function(up, file, result) {
+        $("#reset").show();
+        $(".progress").hide();
+        fileColumns = result.response;
+    });
+
     uploader.bind('Error', function(up, err) {
-        document.getElementById('console').innerHTML += "\nError #" + err.code + ": " + err.message;
+        $(".alert-upload .errror-text").text($(".alert-upload .errror-text").text() + "\nError #" + err.code + ": " + err.message);
+        uploader.files.length = 0
     });
 
     document.getElementById('start-upload').onclick = function() {
-
         console.log(uploader.files)
+        if(uploader.files.length>  0)
             uploader.start();
     };
 
@@ -343,7 +387,7 @@ data-widget-colorbutton="false"
         $("#start-upload").show();
         $("#browse").show();
         $(".moxie-shim").show();
-        uploader.files = []
+        uploader.files.length = 0
         document.getElementById('filelist').innerHTML = '';
     };
 </script>
@@ -463,3 +507,4 @@ data-widget-colorbutton="false"
     })
 
 </script>
+

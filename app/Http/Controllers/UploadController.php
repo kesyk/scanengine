@@ -5,9 +5,13 @@ namespace App\Http\Controllers;
 use App\Enums\ProgressType;
 use App\ScanModel;
 use App\Tools\ScansTableCreator;
+use Box\Spout\Common\Type;
+use Box\Spout\Reader\ReaderFactory;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Jenky\LaravelPlupload\Facades\Plupload;
+use PhpOffice\PhpSpreadsheet\Reader\Xls;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
 
 class UploadController extends Controller
 {
@@ -18,6 +22,22 @@ class UploadController extends Controller
 
     public function upload()
     {
+        $uploadedFile = $this->uploadFileToDisk();
+        if ($uploadedFile != '')
+        {
+            $reader = ReaderFactory::create(Type::XLSX);
+            $reader->open($uploadedFile);
+            foreach ($reader->getSheetIterator() as $sheet) {
+                foreach ($sheet->getRowIterator() as $row) {
+                    $headerColumns = $row;
+                    break;
+                }
+                break;
+            }
+            $reader->close();
+
+            return response($headerColumns);
+        }
 //        $scanTableCreator = new ScansTableCreator("test1");
 //        $scanTableCreator->up();
 //        $scanTable = new ScanModel("scans_test1");
@@ -31,6 +51,35 @@ class UploadController extends Controller
 //
 //        $scanTable->save();
 
+    }
+
+    public function matchUpload(File $file)
+    {
+        return Plupload::file('file', function($file) {
+
+            $reader = ReaderFactory::create(Type::XLSX);
+            $reader->open($file);
+            foreach ($reader->getSheetIterator() as $sheet) {
+                foreach ($sheet->getRowIterator() as $row) {
+                    $headerColumns = $row;
+                    break;
+                }
+                break;
+            }
+            $reader->close();
+            // This will be included in JSON response result
+            return [
+                'success' => true,
+                'message' => 'Upload successful.',
+                // 'url' => $photo->getImageUrl($filename, 'medium'),
+                // 'deleteUrl' => route('photos.destroy', $photo)
+                // ...
+            ];
+        });
+    }
+
+    private function uploadFileToDisk()
+    {
         if (empty($_FILES) || $_FILES['file']['error']) {
             die('{"OK": 0, "info": "Failed to move uploaded file."}');
         }
@@ -65,24 +114,8 @@ class UploadController extends Controller
         if (!$chunks || $chunk == $chunks - 1) {
             // Strip the temp .part suffix off
             rename("{$filePath}.part", $filePath);
+
+            return $filePath;
         }
-
-        die('{"OK": 1, "info": "Upload successful."}');
-    }
-
-    public function matchUpload(File $file)
-    {
-        return Plupload::file('file', function($file) {
-
-
-            // This will be included in JSON response result
-            return [
-                'success' => true,
-                'message' => 'Upload successful.',
-                // 'url' => $photo->getImageUrl($filename, 'medium'),
-                // 'deleteUrl' => route('photos.destroy', $photo)
-                // ...
-            ];
-        });
     }
 }

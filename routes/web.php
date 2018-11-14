@@ -15,3 +15,4 @@ Route::get('/', "HomeController@index")->name('home');
 Route::get('upload', "UploadController@index")->name('upload');
 
 Route::post('upload', "UploadController@upload")->name('uploadscanfile');
+Route::post('matchupload', "UploadController@matchUpload")->name('matchupload');

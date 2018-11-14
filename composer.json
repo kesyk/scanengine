@@ -9,6 +9,7 @@
     },
     "require": {
         "php": "^7.1.0",
+        "box/spout": "^2.7",
         "fideloper/proxy": "^4.0",
         "jenky/laravel-plupload": "^3.0",
         "laravel/framework": "5.7.*",

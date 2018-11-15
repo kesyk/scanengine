@@ -1,4 +1,23 @@
 @include('main.layout.header')
+
+<style>
+	.bootstrapWizard li{
+		width:33.3333%;
+	}
+    .titles .form-group{
+        /* margin-top: 28px; */
+        margin-left: 6rem;
+        font-size: 15px;
+        margin-bottom: 0;
+        margin-bottom: 15px;
+        height: 45px;
+        margin-top:15px;
+    }
+    .titles .form-group .input-group{
+        vertical-align: middle;
+    }
+    .nav.nav-tabs > li.disabled { pointer-events: none; a { color: silver; } }
+</style>
 <!-- MAIN PANEL -->
 <div id="main" role="main">
 <div id="content">
@@ -27,7 +46,7 @@ data-widget-colorbutton="false"
                                     -->
 								<header>
 									<span class="widget-icon"> <i class="fa fa-check"></i> </span>
-									<h2>Very Basic Wizard Example </h2>
+									<h2>Search building </h2>
 
 								</header>
 
@@ -50,24 +69,22 @@ data-widget-colorbutton="false"
 													<div class="form-bootstrapWizard">
 														<ul class="bootstrapWizard form-wizard">
 															<li class="active" data-target="#step1">
-																<a href="#tab1" data-toggle="tab"> <span class="step">1</span> <span class="title">Basic information</span> </a>
+																<a href="#tab1" data-toggle="tab"> <span class="step">1</span> <span class="title">Upload</span> </a>
 															</li>
 															<li data-target="#step2">
-																<a href="#tab2" data-toggle="tab"> <span class="step">2</span> <span class="title">Billing information</span> </a>
+																<a href="#tab2" data-toggle="tab"> <span class="step">2</span> <span class="title">Match</span> </a>
 															</li>
 															<li data-target="#step3">
-																<a href="#tab3" data-toggle="tab"> <span class="step">3</span> <span class="title">Domain Setup</span> </a>
+																<a href="#tab3" data-toggle="tab"> <span class="step">3</span> <span class="title">Search</span> </a>
 															</li>
-															<li data-target="#step4">
-																<a href="#tab4" data-toggle="tab"> <span class="step">4</span> <span class="title">Save Form</span> </a>
-															</li>
+
 														</ul>
 														<div class="clearfix"></div>
 													</div>
 													<div class="tab-content">
 														<div class="tab-pane active" id="tab1">
 															<br>
-															<h3><strong>Step 1 </strong> - Basic Information</h3>
+															<h3><strong>Step 1 </strong> - File uploading</h3>
 
 															<div class="row">
 
@@ -95,15 +112,7 @@ data-widget-colorbutton="false"
                                                                         <table class="table table-bordered">
 
                                                                             <tbody>
-                                                                            <!-- new tr -->
-                                                                            <tr>
-                                                                                <td>
-                                                                                    <p class="txt-color-green">
-                                                                                       File size
-                                                                                    </p></td>
 
-                                                                                <td><p>100mb</p></td>
-                                                                            </tr>
 
                                                                             <!-- new tr -->
                                                                             <tr>
@@ -124,6 +133,8 @@ data-widget-colorbutton="false"
                                                                             </tr>
 
 
+
+
                                                                             </tbody>
 
                                                                         </table>
@@ -141,127 +152,123 @@ data-widget-colorbutton="false"
 														</div>
 														<div class="tab-pane" id="tab2">
 															<br>
-															<h3><strong>Step 2</strong> - Billing Information</h3>
+															<h3><strong>Step 2</strong> - Matching</h3>
 
 															<div class="row">
-																<div class="col-sm-4">
+																<div class="col-sm-4 titles">
 																	<div class="form-group">
 																		<div class="input-group">
 																			<p>Product title</p>
 																		</div>
 																	</div>
+                                                                    <div class="form-group">
+                                                                        <div class="input-group">
+                                                                            <p>Product UPS</p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <div class="input-group">
+                                                                            <p>Product ASIN</p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <div class="input-group">
+                                                                            <p>Product price</p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <div class="input-group">
+                                                                            <p>Product image</p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <div class="input-group">
+                                                                            <p>Product note</p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <div class="input-group">
+                                                                            <p>Product quantity</p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <div class="input-group">
+                                                                            <p>Product url</p>
+                                                                        </div>
+                                                                    </div>
+
 
 																</div>
 																<div class="col-sm-8">
 																	<div class="form-group">
 																		<div class="input-group">
-																			<span class="input-group-addon"><i class="fa fa-map-marker fa-lg fa-fw"></i></span>
-																			<select class="form-control input-lg" name="city">
-																				<option value="" selected="selected">Select City</option>
-																				<option>Amsterdam</option>
-																				<option>Atlanta</option>
-																				<option>Baltimore</option>
-
+																			<span class="input-group-addon"><i class="fa fa-font fa-lg fa-fw"></i></span>
+																			<select class="form-control input-lg product-input title-prod" name="productData[title]">
 																			</select>
 																		</div>
 																	</div>
 																	<div class="form-group">
 																		<div class="input-group">
-																			<span class="input-group-addon"><i class="fa fa-map-marker fa-lg fa-fw"></i></span>
-																			<select class="form-control input-lg" name="city">
-																				<option value="" selected="selected">Select City</option>
-																				<option>Amsterdam</option>
-																				<option>Atlanta</option>
-																				<option>Baltimore</option>
-
+																			<span class="input-group-addon"><i class="fa fa-amazon fa-lg fa-fw"></i></span>
+																			<select class="form-control input-lg product-input upc" name="productData[upc]">
 																			</select>
 																		</div>
 																	</div>
 																	<div class="form-group">
 																		<div class="input-group">
-																			<span class="input-group-addon"><i class="fa fa-map-marker fa-lg fa-fw"></i></span>
-																			<select class="form-control input-lg" name="city">
-																				<option value="" selected="selected">Select City</option>
-																				<option>Amsterdam</option>
-																				<option>Atlanta</option>
-																				<option>Baltimore</option>
-
+																			<span class="input-group-addon"><i class="fa fa-amazon fa-lg fa-fw"></i></span>
+																			<select class="form-control input-lg product-input asin" name="productData[asin]">
 																			</select>
 																		</div>
 																	</div>
 																	<div class="form-group">
 																		<div class="input-group">
-																			<span class="input-group-addon"><i class="fa fa-map-marker fa-lg fa-fw"></i></span>
-																			<select class="form-control input-lg" name="city">
-																				<option value="" selected="selected">Select City</option>
-																				<option>Amsterdam</option>
-																				<option>Atlanta</option>
-																				<option>Baltimore</option>
-
+																			<span class="input-group-addon"><i class="fa fa-dollar fa-lg fa-fw"></i></span>
+																			<select class="form-control input-lg product-input" name="productData[price]">
 																			</select>
 																		</div>
 																	</div>
 																	<div class="form-group">
 																		<div class="input-group">
-																			<span class="input-group-addon"><i class="fa fa-map-marker fa-lg fa-fw"></i></span>
-																			<select class="form-control input-lg" name="city">
-																				<option value="" selected="selected">Select City</option>
-																				<option>Amsterdam</option>
-																				<option>Atlanta</option>
-																				<option>Baltimore</option>
-
+																			<span class="input-group-addon"><i class="fa fa-image fa-lg fa-fw"></i></span>
+																			<select class="form-control input-lg product-input" name="productData[image]">
 																			</select>
 																		</div>
 																	</div>
-																	<div class="form-group">
-																		<div class="input-group">
-																			<span class="input-group-addon"><i class="fa fa-map-marker fa-lg fa-fw"></i></span>
-																			<select class="form-control input-lg" name="city">
-																				<option value="" selected="selected">Select City</option>
-																				<option>Amsterdam</option>
-																				<option>Atlanta</option>
-																				<option>Baltimore</option>
-
-																			</select>
-																		</div>
-																	</div>
-																	<div class="form-group">
-																		<div class="input-group">
-																			<span class="input-group-addon"><i class="fa fa-map-marker fa-lg fa-fw"></i></span>
-																			<select class="form-control input-lg" name="city">
-																				<option value="" selected="selected">Select City</option>
-																				<option>Amsterdam</option>
-																				<option>Atlanta</option>
-																				<option>Baltimore</option>
-
-																			</select>
-																		</div>
-																	</div>
+                                                                    <div class="form-group">
+                                                                        <div class="input-group">
+                                                                            <span class="input-group-addon"><i class="fa fa-sticky-note fa-lg fa-fw"></i></span>
+                                                                            <select class="form-control input-lg product-input" name="productData[note]">
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <div class="input-group">
+                                                                            <span class="input-group-addon"><i class="fa fa-list-ol fa-lg fa-fw"></i></span>
+                                                                            <select class="form-control input-lg product-input" name="productData[quantity]">
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <div class="input-group">
+                                                                            <span class="input-group-addon"><i class="fa fa-link fa-lg fa-fw"></i></span>
+                                                                            <select class="form-control input-lg product-input" name="productData[url]">
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
 																</div>
 
 															</div>
 														</div>
+
 														<div class="tab-pane" id="tab3">
 															<br>
-															<h3><strong>Step 3</strong> - Domain Setup</h3>
-															<div class="alert alert-info fade in">
-																<button class="close" data-dismiss="alert">
-    ×
-																</button>
-																<i class="fa-fw fa fa-info"></i>
-																<strong>Info!</strong> Place an info message box if you wish.
-															</div>
-															<div class="form-group">
-																<label>This is a label</label>
-																<input class="form-control input-lg" placeholder="Another input box here..." type="text" name="etc" id="etc">
-															</div>
-														</div>
-														<div class="tab-pane" id="tab4">
+															<h3><strong>Step 3</strong> - Start searching</h3>
 															<br>
-															<h3><strong>Step 4</strong> - Save Form</h3>
-															<br>
-															<h1 class="text-center text-success"><strong><i class="fa fa-check fa-lg"></i> Complete</strong></h1>
-															<h4 class="text-center">Click next to finish</h4>
+															<h1 class="text-center text-success"><strong><i class="fa fa-check fa-lg"></i> Almost done!</strong></h1>
+															<h4 class="text-center">Click Scan to start searching</h4>
+															<div style="margin-top:15px;" class="text-center"><a id="browse" class="btn btn-primary" href="javascript:;">Scan</a></div>
+
 															<br>
 															<br>
 														</div>
@@ -322,8 +329,9 @@ data-widget-colorbutton="false"
 
 
 <script>
-    var fileColumns;
+    var fileColumns=[];
 </script>
+
 <script type="text/javascript">
 	var maxFiles = 1;
     var uploader = new plupload.Uploader({
@@ -332,7 +340,6 @@ data-widget-colorbutton="false"
         multi_selection:false,
         chunk_size: '10mb',
 		max_file_count: 1,
-		max_file_size: '100mb',
         filters : [
             {title : "Excel files", extensions : "csv,xls,xlsx"}
         ]
@@ -342,9 +349,13 @@ data-widget-colorbutton="false"
 
     uploader.bind('FilesAdded', function(up, files) {
         var html = '';
+        console.log(files)
         plupload.each(files, function(file) {
 			if (up.files.length > maxFiles) {
-				up.removeFile(file);
+			    uploader.files.forEach(function(f){
+			        if(f.id != file.id)
+			            up.removeFile(f)
+                })
 			}
 			html = '<li id="' + file.id + '">' + file.name + ' (' + plupload.formatSize(file.size) + ') <b></b></li>';
 
@@ -369,7 +380,7 @@ data-widget-colorbutton="false"
     uploader.bind('FileUploaded', function(up, file, result) {
         $("#reset").show();
         $(".progress").hide();
-        fileColumns = result.response;
+        fileColumns = JSON.parse(result.response);
     });
 
     uploader.bind('Error', function(up, err) {
@@ -392,18 +403,28 @@ data-widget-colorbutton="false"
     };
 </script>
 <script>
+    $(".chunk_size").change(function(){
+        uploader.settings.chunk_size = $(".chunk_size").val()+'mb'
+        console.log(uploader)
+    })
+</script>
+<script>
 
     // DO NOT REMOVE : GLOBAL FUNCTIONS!
 
     $(document).ready(function() {
         $(".close").click(function () {
             $(this).parent().hide();
+
         })
         pageSetUp();
 
 
 
         //Bootstrap Wizard Validations
+        jQuery.validator.addMethod("notEqual", function(value, element, param) {
+            return  ($(".asin").val() != 'none' || $(".title-prod").val() != 'none' || $(".upc").val() !=  'none');
+        }, "Please specify a different (non-default) value");
 
         var $validator = $("#wizard-1").validate({
 
@@ -411,41 +432,17 @@ data-widget-colorbutton="false"
                 scanfileupload: {
                     required: true,
                 },
-                fname: {
-                    required: true
+                "productData[upc]": {
+        			notEqual: "none"
                 },
-                lname: {
-                    required: true
+                "productData[title]": {
+                    notEqual: "none"
                 },
-                country: {
-                    required: true
-                },
-                city: {
-                    required: true
-                },
-                postal: {
-                    required: true,
-                    minlength: 4
-                },
-                wphone: {
-                    required: true,
-                    minlength: 10
-                },
-                hphone: {
-                    required: true,
-                    minlength: 10
+                "productData[asin]":
+				{
+                    notEqual: "none"
                 }
             },
-
-            messages: {
-                fname: "Please specify your First name",
-                lname: "Please specify your Last name",
-                email: {
-                    required: "We need your email address to contact you",
-                    email: "Your email address must be in the format of name@domain.com"
-                }
-            },
-
             highlight: function (element) {
                 $(element).closest('.form-group').removeClass('has-success').addClass('has-error');
             },
@@ -465,6 +462,9 @@ data-widget-colorbutton="false"
 
         $('#bootstrap-wizard-1').bootstrapWizard({
             'tabClass': 'form-wizard',
+            onTabClick: function(tab, navigation, index) {
+                return false;
+            },
             'onNext': function (tab, navigation, index) {
                 if(index == 1 &&  ((uploader.files.length == 0) || (uploader.files.length > 0 && uploader.files[0].percent != 100)))
 				{
@@ -473,15 +473,16 @@ data-widget-colorbutton="false"
 					return false;
 				}
                 $(".alert-upload").hide();
-				var $valid = $("#wizard-1").valid();
-                if (!$valid) {
-                    $validator.focusInvalid();
-                    return false;
-                } else {
-                    $('#bootstrap-wizard-1').find('.form-wizard').children('li').eq(index - 1).addClass(
-                        'complete');
-                    $('#bootstrap-wizard-1').find('.form-wizard').children('li').eq(index - 1).find('.step')
-                        .html('<i class="fa fa-check"></i>');
+                if(index == 1  && fileColumns.length > 0)
+                {
+                    $(".asin").val()
+                    $(".title").val()
+                    var output = '<option value="none">none</option>';
+                    fileColumns.forEach(function(element) {
+                        output += '<option value="'+element+'">'+element+'</option>'
+                    });
+
+                    $(".product-input").append(output)
                 }
             }
         });

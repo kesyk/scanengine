@@ -4,9 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ScanModel extends Model
+class AmazonProduct extends Model
 {
-
     protected $table;
     protected $fillable = [
         'originalname',
@@ -24,6 +23,5 @@ class ScanModel extends Model
 
         $this->table = $tableName;
     }
-
 
 }

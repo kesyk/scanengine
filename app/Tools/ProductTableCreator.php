@@ -5,13 +5,13 @@ namespace App\Tools;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 
-class ScansTableCreator
+class ProductTableCreator
 {
     private $tableName;
 
     public function __construct($t_tableName)
     {
-        $this->tableName = 'scans_'.$t_tableName;
+        $this->tableName = 'upload_'.$t_tableName;
     }
 
     public function up()

@@ -3,12 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\AmazonSearch;
-use App\Tools\ProductTableCreator;
+use App\Jobs\SearchProcessor;
 use Box\Spout\Common\Type;
 use Box\Spout\Reader\ReaderFactory;
-use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
-use Jenky\LaravelPlupload\Facades\Plupload;
 use Illuminate\Http\Request;
 
 class UploadController extends Controller
@@ -40,25 +38,24 @@ class UploadController extends Controller
 
     public function createSearch(Request $request)
     {
-        $productData = (object)$request->productData;
-        $fileData = (object)$request->fileData;
+        $userMatch = (object)$request->productData;
+        $fileName = (object)$request->fileName;
 
         #region Validation
 
-        if($productData == null)
+        if($userMatch == null)
             response(array("type" => "error", "message" => "Columns are not filled"));
 
-        if($productData->upc == 'none' &&
-            $productData->asin == 'none' &&
-            $productData->title == 'none')
+        if($userMatch->upc == 'none' &&
+            $userMatch->asin == 'none' &&
+            $userMatch->title == 'none')
             response(array("type" => "error", "message" => "Main fields are not filled. Please fill ASIN, UPS or Title column in mathing section"));
 
         #endregion
 
         $search = new AmazonSearch();
-        $search->originalname = $fileData->name;
-        $search->hashedname = md5($search->id.$fileData->name);
-
+        $search->originalname = $fileName;
+        $search->hashedname = md5($search->id.$fileName->name);
     }
 
     private function uploadFileToDisk()
@@ -100,5 +97,14 @@ class UploadController extends Controller
 
             return $filePath;
         }
+    }
+
+    public function start()
+    {
+
+        $bgWork = new SearchProcessor();
+
+        $this->dispatch($bgWork);
+
     }
 }

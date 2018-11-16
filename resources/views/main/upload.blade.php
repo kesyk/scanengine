@@ -200,65 +200,64 @@ data-widget-colorbutton="false"
 
 																</div>
 																<div class="col-sm-8">
-																	<div class="form-group">
-																		<div class="input-group">
-																			<span class="input-group-addon"><i class="fa fa-font fa-lg fa-fw"></i></span>
-																			<select class="form-control input-lg product-input title-prod" name="productData[title]">
-																			</select>
-																		</div>
-																	</div>
-																	<div class="form-group">
-																		<div class="input-group">
-																			<span class="input-group-addon"><i class="fa fa-amazon fa-lg fa-fw"></i></span>
-																			<select class="form-control input-lg product-input upc" name="productData[upc]">
-																			</select>
-																		</div>
-																	</div>
-																	<div class="form-group">
-																		<div class="input-group">
-																			<span class="input-group-addon"><i class="fa fa-amazon fa-lg fa-fw"></i></span>
-																			<select class="form-control input-lg product-input asin" name="productData[asin]">
-																			</select>
-																		</div>
-																	</div>
-																	<div class="form-group">
-																		<div class="input-group">
-																			<span class="input-group-addon"><i class="fa fa-dollar fa-lg fa-fw"></i></span>
-																			<select class="form-control input-lg product-input" name="productData[price]">
-																			</select>
-																		</div>
-																	</div>
-																	<div class="form-group">
-																		<div class="input-group">
-																			<span class="input-group-addon"><i class="fa fa-image fa-lg fa-fw"></i></span>
-																			<select class="form-control input-lg product-input" name="productData[image]">
-																			</select>
-																		</div>
-																	</div>
-                                                                    <div class="form-group">
-                                                                        <div class="input-group">
-                                                                            <span class="input-group-addon"><i class="fa fa-sticky-note fa-lg fa-fw"></i></span>
-                                                                            <select class="form-control input-lg product-input" name="productData[note]">
-                                                                            </select>
+                                                                        <div class="form-group">
+                                                                            <div class="input-group">
+                                                                                <span class="input-group-addon"><i class="fa fa-font fa-lg fa-fw"></i></span>
+                                                                                <select class="form-control input-lg product-input title-prod" name="productData[title]">
+                                                                                </select>
+                                                                            </div>
                                                                         </div>
-                                                                    </div>
-                                                                    <div class="form-group">
-                                                                        <div class="input-group">
-                                                                            <span class="input-group-addon"><i class="fa fa-list-ol fa-lg fa-fw"></i></span>
-                                                                            <select class="form-control input-lg product-input" name="productData[quantity]">
-                                                                            </select>
+                                                                        <div class="form-group">
+                                                                            <div class="input-group">
+                                                                                <span class="input-group-addon"><i class="fa fa-amazon fa-lg fa-fw"></i></span>
+                                                                                <select class="form-control input-lg product-input upc" name="productData[upc]">
+                                                                                </select>
+                                                                            </div>
                                                                         </div>
-                                                                    </div>
-                                                                    <div class="form-group">
-                                                                        <div class="input-group">
-                                                                            <span class="input-group-addon"><i class="fa fa-link fa-lg fa-fw"></i></span>
-                                                                            <select class="form-control input-lg product-input" name="productData[url]">
-                                                                            </select>
+                                                                        <div class="form-group">
+                                                                            <div class="input-group">
+                                                                                <span class="input-group-addon"><i class="fa fa-amazon fa-lg fa-fw"></i></span>
+                                                                                <select class="form-control input-lg product-input asin" name="productData[asin]">
+                                                                                </select>
+                                                                            </div>
                                                                         </div>
-                                                                    </div>
-																</div>
-
-															</div>
+                                                                        <div class="form-group">
+                                                                            <div class="input-group">
+                                                                                <span class="input-group-addon"><i class="fa fa-dollar fa-lg fa-fw"></i></span>
+                                                                                <select class="form-control input-lg product-input" name="productData[price]">
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <div class="input-group">
+                                                                                <span class="input-group-addon"><i class="fa fa-image fa-lg fa-fw"></i></span>
+                                                                                <select class="form-control input-lg product-input" name="productData[image]">
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <div class="input-group">
+                                                                                <span class="input-group-addon"><i class="fa fa-sticky-note fa-lg fa-fw"></i></span>
+                                                                                <select class="form-control input-lg product-input" name="productData[note]">
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <div class="input-group">
+                                                                                <span class="input-group-addon"><i class="fa fa-list-ol fa-lg fa-fw"></i></span>
+                                                                                <select class="form-control input-lg product-input" name="productData[quantity]">
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <div class="input-group">
+                                                                                <span class="input-group-addon"><i class="fa fa-link fa-lg fa-fw"></i></span>
+                                                                                <select class="form-control input-lg product-input" name="productData[url]">
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+                                                                </div>
+                                                            </div>
 														</div>
 
 														<div class="tab-pane" id="tab3">
@@ -267,7 +266,7 @@ data-widget-colorbutton="false"
 															<br>
 															<h1 class="text-center text-success"><strong><i class="fa fa-check fa-lg"></i> Almost done!</strong></h1>
 															<h4 class="text-center">Click Scan to start searching</h4>
-															<div style="margin-top:15px;" class="text-center"><a id="browse" class="btn btn-primary" href="javascript:;">Scan</a></div>
+															<div style="margin-top:15px;" class="text-center"><a id="scan" class="btn btn-primary" href="javascript:;">Scan</a></div>
 
 															<br>
 															<br>
@@ -330,6 +329,7 @@ data-widget-colorbutton="false"
 
 <script>
     var fileColumns=[];
+    var uploadedFile;
 </script>
 
 <script type="text/javascript">
@@ -349,7 +349,6 @@ data-widget-colorbutton="false"
 
     uploader.bind('FilesAdded', function(up, files) {
         var html = '';
-        console.log(files)
         plupload.each(files, function(file) {
 			if (up.files.length > maxFiles) {
 			    uploader.files.forEach(function(f){
@@ -381,6 +380,7 @@ data-widget-colorbutton="false"
         $("#reset").show();
         $(".progress").hide();
         fileColumns = JSON.parse(result.response);
+        uploadedFile = file
     });
 
     uploader.bind('Error', function(up, err) {
@@ -423,6 +423,7 @@ data-widget-colorbutton="false"
 
         //Bootstrap Wizard Validations
         jQuery.validator.addMethod("notEqual", function(value, element, param) {
+            console.log($(".asin").val() != 'none', $(".title-prod").val() != 'none' , $(".upc").val() !=  'none')
             return  ($(".asin").val() != 'none' || $(".title-prod").val() != 'none' || $(".upc").val() !=  'none');
         }, "Please specify a different (non-default) value");
 
@@ -484,6 +485,16 @@ data-widget-colorbutton="false"
 
                     $(".product-input").append(output)
                 }
+                var $valid = $("#wizard-1").valid();
+                if (!$valid) {
+                    $validator.focusInvalid();
+                    return false;
+                } else {
+                    $('#bootstrap-wizard-1').find('.form-wizard').children('li').eq(index - 1).addClass(
+                        'complete');
+                    $('#bootstrap-wizard-1').find('.form-wizard').children('li').eq(index - 1).find('.step')
+                        .html('<i class="fa fa-check"></i>');
+                }
             }
         });
 
@@ -507,5 +518,22 @@ data-widget-colorbutton="false"
 
     })
 
+</script>
+
+
+<script>
+    $.ajaxSetup({
+        headers:{
+            'X-CSRF-TOKEN': '{{csrf_token()}}',
+        }
+    });
+    $("#scan").click(() => {
+        var matchData = $("#wizard-1").serialize()+'&fileName='+uploader.files[0].name;
+        let url = "{{route('search')}}"
+        $.post(url, matchData)
+            .done(function( data ) {
+                console.log(data)
+            });
+    })
 </script>
 

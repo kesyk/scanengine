@@ -10,6 +10,7 @@
     "require": {
         "php": "^7.1.0",
         "box/spout": "^2.7",
+        "bschmitt/laravel-amqp": "^2.0",
         "exeu/apai-io": "^2.2",
         "fideloper/proxy": "^4.0",
         "jenky/laravel-plupload": "^3.0",

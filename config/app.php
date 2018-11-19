@@ -161,7 +161,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Jenky\LaravelPlupload\PluploadServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
-
+        Bschmitt\Amqp\AmqpServiceProvider::class,
         /*
          * Package Service Providers...
          */
@@ -225,7 +225,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Plupload' => Jenky\LaravelPlupload\Facades\Plupload::class,
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
-
+        'Amqp' => Bschmitt\Amqp\Facades\Amqp::class
     ],
 
 ];

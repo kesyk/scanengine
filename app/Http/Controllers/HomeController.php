@@ -2,18 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use App\AmazonSearch;
-use App\Jobs\SearchProcessor;
-use Bschmitt\Amqp\Amqp;
-use GuzzleHttp\Client;
-use Illuminate\Http\Request;
+use App\Messaging\RabbitMQPublisher;
+use App\Messaging\RmqAmazonSearchesConsumer;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        $rabbitClient = new Amqp();
-        $rabbitClient->publish('routing-key', 'message' , ['queue' => 'searches']);
+
+//        $publisher = new RabbitMQPublisher();
+//
+//        $publisher->publish("sex");
+//
+//        $publisher->closeConnection();
+//
+//        $consumer = new RmqAmazonSearchesConsumer();
+//        $consumer->consume();
+
         return view("main.index");
     }
 

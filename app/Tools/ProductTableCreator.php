@@ -20,13 +20,24 @@ class ProductTableCreator
         {
             Schema::create($this->tableName, function (Blueprint $table) {
                 $table->increments('id');
-                $table->string('originalname');
                 $table->string('hashedname');
-                $table->integer('linescount');
-                $table->integer('checked');
-                $table->integer('added');
-                $table->integer('progresstype');
-                $table->timestamp('ended_at');
+                $table->string('upc');
+                $table->double('price');
+                $table->string('asin');
+                $table->double('salesrank');
+                $table->string('title');
+                $table->string('brand');
+                $table->string('atitle');
+                $table->integer('packagequantity');
+                $table->double('aboxprice');
+                $table->integer('newoffers');
+                $table->string('category');
+                $table->double('fbafee');
+                $table->double('reffee');
+                $table->double('varclosingfee');
+                $table->double('shippingcost');
+                $table->double('profit');
+                $table->double('roi');
                 $table->timestamps();
             });
         }

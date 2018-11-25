@@ -8,15 +8,26 @@ class AmazonProduct extends Model
 {
     protected $table;
     protected $fillable = [
-        'originalname',
+        'id',
         'hashedname',
-        'linescount',
-        'checked',
-        'added',
-        'progresstype',
-        'ended_at',
+        'upc',
+        'price',
+        'asin',
+        'salesrank',
+        'title',
+        'brand',
+        'atitle',
+        'packagequantity',
+        'aboxprice',
+        'newoffers',
+        'category',
+        'fbafee',
+        'reffee',
+        'varclosingfee',
+        'shippingcost',
+        'profit',
+        'roi',
     ];
-
     public function __construct($tableName, array $attributes = [])
     {
         parent::__construct($attributes);

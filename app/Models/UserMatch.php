@@ -16,7 +16,6 @@ class UserMatch
     public $asin;
     public $price;
     public $image;
-    public $note;
     public $quantity;
     public $url;
 

@@ -14,7 +14,5 @@
 Route::get('/', "HomeController@index")->name('home');
 Route::get('upload', "UploadController@index")->name('upload');
 
-Route::post('upload', "UploadController@upload")->name('uploadscanfile');
-Route::post('matchupload', "UploadController@matchUpload")->name('matchupload');
-Route::post('search', "UploadController@createSearch")->name('search');
-Route::get('start', "UploadController@start")->name('start');
+Route::post('upload', "UploadController@uploadFileToDisk")->name('uploadscanfile');
+Route::post('search', "UploadController@uploadFileToDb")->name('search');

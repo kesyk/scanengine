@@ -18,7 +18,9 @@
         "linq/php-linq": "^1.0",
         "maatwebsite/excel": "^3.1",
         "myclabs/php-enum": "^1.6",
-        "php-amqplib/php-amqplib": "^2.8"
+        "php-amqplib/php-amqplib": "^2.8",
+        "phpoffice/phpspreadsheet": "^1.5",
+        "rap2hpoutre/fast-excel": "^0.11.0"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",

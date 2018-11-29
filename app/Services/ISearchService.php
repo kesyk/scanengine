@@ -1,6 +1,8 @@
 <?php
 
+namespace App\Services;
+
 interface ISearchService {
-    public function startSearch($searchId);
-    public function stopSearch($searchId);
+    public function startSearch();
+    public function stopSearch();
 }

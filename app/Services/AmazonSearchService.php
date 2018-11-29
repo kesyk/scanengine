@@ -8,16 +8,48 @@
 
 namespace App\Services;
 
-use ISearchService;
+use Illuminate\Support\Facades\DB;
+use MarcL\AmazonAPI;
+use MarcL\AmazonUrlBuilder;
 
 class AmazonSearchService implements ISearchService
 {
-    public function startSearch($searchId)
+    private $keyId;
+    private $secretKey;
+    private $associateId;
+    private $amazon;
+    private $searchHash;
+
+    public function __construct($t_searchHash)
     {
-        // TODO: Implement startScan() method.
+        $this->keyId = config("amazon.key_id");
+        $this->secretKey = config("amazon.secret_key");
+
+        $urlBuilder = new AmazonUrlBuilder(
+            $this->keyId,
+            $this->secretKey,
+            "test",
+            'us'
+        );
+
+        $this->amazon = new AmazonAPI($urlBuilder, 'simple');
+
+        $this->searchHash = $t_searchHash;
+
+        return $this->amazon;
     }
 
-    public function stopSearch($searchId)
+    public function startSearch()
+    {
+        $searchInfo = DB::table("searches")->where('hashedname', $this->searchHash)->first();
+        $products = DB::table("upload_{$this->searchHash}")->select()->limit(20)->get();
+
+        foreach ($products as $product)
+            $foundItems = $this->amazon->ItemLookup($product->asin);
+
+    }
+
+    public function stopSearch()
     {
         // TODO: Implement stopScan() method.
     }

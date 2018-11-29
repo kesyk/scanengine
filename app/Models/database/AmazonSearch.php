@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class AmazonSearch extends Model
 {
+    protected $table = "searches";
+
     protected $fillable = [
         'originalname',
         'hashedname',

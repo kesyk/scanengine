@@ -13,9 +13,9 @@ use MyCLabs\Enum\Enum;
 
 class ProgressType extends Enum
 {
-    private const NEW = 'new';
-    private const IN_PROCESS = 'inprocess';
-    private const COMPLETED = 'completed';
-    private const FAILED = 'failed';
+    public const NEW = 0;
+    public const IN_PROCESS = 1;
+    public const COMPLETED = 2;
+    public const FAILED = 3;
 
 }

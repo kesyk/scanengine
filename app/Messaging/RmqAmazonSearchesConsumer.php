@@ -8,9 +8,11 @@
 
 namespace App\Messaging;
 
-
+use App\Enums\ProgressType;
+use App\Services\AmazonSearchService;
+use ErrorException;
+use Illuminate\Support\Facades\DB;
 use PhpAmqpLib\Connection\AMQPStreamConnection;
-use PhpAmqpLib\Message\AMQPMessage;
 
 define ('SOCKET_EAGAIN', 11);
 
@@ -46,13 +48,25 @@ class RmqAmazonSearchesConsumer
         while (count($this->channel->callbacks)) {
             try {
                 $this->channel->wait();
-            } catch (\ErrorException $e) {
+            } catch (ErrorException $e) {
+                echo $e->getMessage();
             }
         }
     }
 
     public function callback($message){
-        //todo:processs message
+        $searchHash = $message->body;
+
+        $existedSearch = DB::table("searches")
+            ->where('originalname', $searchHash)
+            ->first();
+
+        if($existedSearch != null &&
+            $existedSearch->progresstype == ProgressType::IN_PROCESS)
+            return;
+
+        $amazonSearchService = new AmazonSearchService($searchHash);
+        $amazonSearchService->startSearch();
     }
 
     public function closeConnection()

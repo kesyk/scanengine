@@ -15,13 +15,13 @@ class CreateSearchesTable extends Migration
     {
         Schema::create('searches', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('originalname');
-            $table->string('hashedname');
-            $table->integer('linescount');
-            $table->integer('checked');
-            $table->integer('added');
-            $table->integer('progresstype');
-            $table->timestamp('ended_at');
+            $table->string('originalname')->nullable();
+            $table->string('hashedname')->nullable();
+            $table->integer('linescount')->nullable();
+            $table->integer('checked')->nullable();
+            $table->integer('added')->nullable();
+            $table->integer('progresstype')->nullable();
+            $table->timestamp('ended_at')->nullable();
             $table->timestamps();
         });
     }

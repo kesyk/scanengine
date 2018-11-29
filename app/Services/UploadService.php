@@ -9,7 +9,10 @@
 namespace App\Services;
 
 
-use App\AmazonProduct;
+use App\AmazonSearch;
+use App\Enums\ProgressType;
+use App\Messaging\RabbitMQPublisher;
+use App\Models\Database\AmazonProduct;
 use App\Models\MatchedResult;
 use App\Models\UserMatch;
 use App\Tools\ProductTableCreator;
@@ -17,6 +20,7 @@ use Box\Spout\Common\Type;
 use Box\Spout\Reader\ReaderFactory;
 use Exception;
 use Faker\Provider\Uuid;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use PhpOffice\PhpSpreadsheet\IOFactory;
 
@@ -27,15 +31,34 @@ class UploadService
         try{
             $fileFullName = Storage::disk('local')->getAdapter()->getPathPrefix().'/'.$fileName;
 
+            $publisher = new RabbitMQPublisher();
+
             #region Validation
 
             if($userMatch == null)
-                response(array("type" => "error", "message" => "Columns are not filled"));
+                throw new Exception("Columns are not filled");
 
             if($userMatch->upc == 'none' &&
                 $userMatch->asin == 'none' &&
                 $userMatch->title == 'none')
-                response(array("type" => "error", "message" => "Main fields are not filled. Please fill ASIN, UPS or Title column in mathing section"));
+                throw new Exception("Main fields are not filled. Please fill ASIN, UPS or Title column in mathing section");
+
+            $existedSearch = DB::table("searches")
+                ->where('originalname', $fileName)
+                ->first();
+
+            if($existedSearch != null &&
+                ($existedSearch->progresstype == ProgressType::FAILED ||
+                $existedSearch->progresstype == ProgressType::NEW))
+            {
+                $publisher->publish($existedSearch->hashedname);
+                return response(array("type" => "success", "message" => "Search request has sent"));
+            }
+
+            if($existedSearch &&
+                ($existedSearch->progresstype == ProgressType::COMPLETED ||
+                $existedSearch->progresstype == ProgressType::IN_PROCESS))
+                throw new Exception("This search is exists");
 
             #endregion
 
@@ -44,34 +67,59 @@ class UploadService
             $productTableCreator = new ProductTableCreator($hashedName);
             $productTableCreator->up();
 
-
-            $scanTimestamp = time();
-            $linesAmount = 0;
-
             $fileColumnsNames = $this->getColumnsNamesOfFile($fileFullName);
             $matchedIndexes = $this->getIndexesOfDefaultColumns($userMatch, $fileColumnsNames);
 
+            $data = array();
+            $linesAmount = 0;
+            $pageSize = 50;
+            $rowProcessed = 0;
+            $product = new AmazonProduct($hashedName);
+
             $reader = ReaderFactory::create($this->getFileExtensionType($fileName));
             $reader->open($fileFullName);
+
             foreach ($reader->getSheetIterator() as $sheet) {
                 foreach ($sheet->getRowIterator() as $row) {
                     if($row == $fileColumnsNames)
                         continue;
 
-                    $product = new AmazonProduct($hashedName);
                     $product->setupProductByUserMatch($matchedIndexes, $row, $hashedName);
-                    $product->save();
+                    array_push($data, $product->getArrayData());
 
+                    if($rowProcessed > $pageSize)
+                    {
+                        DB::table($product->getTableName())->insert($data);
+                        $rowProcessed=0;
+                        $data = array();
+                        break;
+                    }
+                    $rowProcessed++;
                     $linesAmount++;
                 }
                 break;
             }
+
             $reader->close();
 
+            $search = new AmazonSearch();
+
+            $search->originalname = "{$fileName}";
+            $search->hashedname = "{$hashedName}";
+            $search->linescount = $linesAmount;
+            $search->checked = 0;
+            $search->added = $linesAmount;
+            $search->progresstype = ProgressType::NEW;
+
+            $search->save();
+
+            $publisher->publish($hashedName);
+
+            return response(array("type" => "success", "message" => "Search process has started"));
         }
         catch (Exception $ex)
         {
-            throw new Exception("Failed upload file data to database");
+            throw new Exception("Failed upload file data to database. {$ex->getMessage()}");
         }
     }
 
@@ -136,43 +184,42 @@ class UploadService
 
     private function getColumnsNamesOfFile($fullPath)
     {
-        $chunkReader = new ExcelChunkReader($fullPath);
-        /**  Create a new Reader of the type defined in $inputFileType  **/
-        $filter = new ExcelChunkFilter();
-        $fileType = IOFactory::identify($fullPath);
-        $reader = IOFactory::createReader($fileType);
-
-        /**  Define how many rows we want to read for each "chunk"  **/
-        $chunkSize = 10;
-        /**  Create a new Instance of our Read Filter  **/
-
-        /**  Tell the Reader that we want to use the Read Filter  **/
-        $reader->setReadFilter($filter);
-        $reader->setReadDataOnly(true);
-        $reader->setReadEmptyCells(false);
-        /**  Loop to read our worksheet in "chunk size" blocks  **/
-        for ($startRow = 2; $startRow <= 65536; $startRow += $chunkSize) {
-            /**  Tell the Read Filter which rows we want this iteration  **/
-            $filter->setRows($startRow, $chunkSize);
-            /**  Load only the rows that match our filter  **/
-            $spreadsheet = $reader->load($fullPath);
-        }
-            //    Do some processing here
-//        $reader = ReaderFactory::create($this->getFileExtensionType($fullPath));
-//        //todo
-//        $headerColumns=array();
+//        $chunkReader = new ExcelChunkReader($fullPath);
+//        /**  Create a new Reader of the type defined in $inputFileType  **/
+//        $filter = new ExcelChunkFilter();
+//        $fileType = IOFactory::identify($fullPath);
+//        $reader = IOFactory::createReader($fileType);
 //
-//        $reader->open($fullPath);
-//        foreach ($reader->getSheetIterator() as $sheet) {
-//            foreach ($sheet->getRowIterator() as $row) {
-//                $headerColumns = $row;
-//                break;
-//            }
-//            break;
+//        /**  Define how many rows we want to read for each "chunk"  **/
+//        $chunkSize = 10;
+//        /**  Create a new Instance of our Read Filter  **/
+//
+//        /**  Tell the Reader that we want to use the Read Filter  **/
+//        $reader->setReadFilter($filter);
+//        $reader->setReadDataOnly(true);
+//        $reader->setReadEmptyCells(false);
+//        /**  Loop to read our worksheet in "chunk size" blocks  **/
+//        for ($startRow = 2; $startRow <= 65536; $startRow += $chunkSize) {
+//            /**  Tell the Read Filter which rows we want this iteration  **/
+//            $filter->setRows($startRow, $chunkSize);
+//            /**  Load only the rows that match our filter  **/
+//            $spreadsheet = $reader->load($fullPath);
 //        }
-//        $reader->close();
-//
-//        return $headerColumns;
+        $reader = ReaderFactory::create($this->getFileExtensionType($fullPath));
+        //todo
+        $headerColumns=array();
+
+        $reader->open($fullPath);
+        foreach ($reader->getSheetIterator() as $sheet) {
+            foreach ($sheet->getRowIterator() as $row) {
+                $headerColumns = $row;
+                break;
+            }
+            break;
+        }
+        $reader->close();
+
+        return $headerColumns;
     }
 
 

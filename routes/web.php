@@ -23,9 +23,13 @@ $container->singleton(\App\Messaging\RmqAmazonSearchesConsumer::class);
 
 
 Route::get('/', "HomeController@index")->name('home');
+Route::get('/searches/{id}', "SearchController@showSearch")->name('search');
+Route::get('/searches', "SearchController@index")->name('searches');
+Route::get('/searches/{id}/products', "SearchController@showProducts")->name('searchproducts');
 
 Route::get('upload', "UploadController@index")->name('upload');
 Route::post('upload', "UploadController@uploadFileToDisk")->name('uploadscanfile');
 Route::post('search', "UploadController@uploadFileToDb")->name('search');
 
 Route::post('download', "DownloadController@download")->name('download');
+

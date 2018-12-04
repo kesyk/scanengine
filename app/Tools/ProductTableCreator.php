@@ -11,7 +11,7 @@ class ProductTableCreator
 
     public function __construct($t_tableName)
     {
-        $this->tableName = 'upload_'.$t_tableName;
+        $this->tableName = self::getTablePrefix().$t_tableName;
     }
 
     public function up()
@@ -54,6 +54,11 @@ class ProductTableCreator
     private function isExist()
     {
         return Schema::hasTable($this->tableName);
+    }
+
+    public static function getTablePrefix()
+    {
+        return "upload_";
     }
 
 }

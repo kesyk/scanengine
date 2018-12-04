@@ -7,6 +7,7 @@ use Illuminate\Console\Command;
 
 class ConsumerCommands extends Command
 {
+    private $amazonSearchesConsumer;
     /**
      * The name and signature of the console command.
      *
@@ -24,11 +25,13 @@ class ConsumerCommands extends Command
     /**
      * Create a new command instance.
      *
-     * @return void
+     * @param RmqAmazonSearchesConsumer $amazonSearchesConsumer
      */
-    public function __construct()
+    public function __construct(RmqAmazonSearchesConsumer $amazonSearchesConsumer)
     {
         parent::__construct();
+
+        $this->amazonSearchesConsumer = $amazonSearchesConsumer;
     }
 
     /**
@@ -38,7 +41,6 @@ class ConsumerCommands extends Command
      */
     public function handle()
     {
-        $consumer = new RmqAmazonSearchesConsumer();
-        $consumer->consume();
+        $this->amazonSearchesConsumer->consume();
     }
 }

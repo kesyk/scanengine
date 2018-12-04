@@ -9,6 +9,13 @@ use Illuminate\Http\Request;
 
 class UploadController extends Controller
 {
+    private  $uploadService;
+
+    public function __construct(UploadService $uploadService)
+    {
+        $this->uploadService = $uploadService;
+    }
+
     public function index()
     {
         return view('main.upload');
@@ -17,9 +24,7 @@ class UploadController extends Controller
     public function uploadFileToDisk()
     {
         try{
-            $uploadService = new UploadService();
-
-            return $uploadService->uploadFileToDisk();
+            return $this->uploadService->uploadFileToDisk();
         }
         catch (Exception $ex)
         {
@@ -33,9 +38,7 @@ class UploadController extends Controller
             $userMatch = new UserMatch((object)$request->productData);
             $fileName = ((object)$request->fileName)->scalar;
 
-            $uploadService = new UploadService();
-
-            $uploadService->uploadFileToDb($userMatch, $fileName);
+            $this->uploadService->uploadFileToDb($userMatch, $fileName);
         }
         catch (Exception $ex)
         {

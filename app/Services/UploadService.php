@@ -26,12 +26,16 @@ use PhpOffice\PhpSpreadsheet\IOFactory;
 
 class UploadService
 {
+    private $rabbitMQPublisher;
+
+    public function __construct(RabbitMQPublisher $rabbitMQPublisher)
+    {
+        $this->rabbitMQPublisher = $rabbitMQPublisher;
+    }
 
     public function uploadFileToDb(UserMatch $userMatch, $fileName){
         try{
             $fileFullName = Storage::disk('local')->getAdapter()->getPathPrefix().'/'.$fileName;
-
-            $publisher = new RabbitMQPublisher();
 
             #region Validation
 
@@ -51,7 +55,7 @@ class UploadService
                 ($existedSearch->progresstype == ProgressType::FAILED ||
                 $existedSearch->progresstype == ProgressType::NEW))
             {
-                $publisher->publish($existedSearch->hashedname);
+                $this->rabbitMQPublisher->publish($existedSearch->hashedname);
                 return response(array("type" => "success", "message" => "Search request has sent"));
             }
 
@@ -113,7 +117,7 @@ class UploadService
 
             $search->save();
 
-            $publisher->publish($hashedName);
+            $this->rabbitMQPublisher->publish($hashedName);
 
             return response(array("type" => "success", "message" => "Search process has started"));
         }
@@ -128,8 +132,6 @@ class UploadService
 
         if ($uploadedFileFullPath != '')
         {
-            //$uploadedFileFullPath = $this->convertXlsToXlsxIfNeeded($uploadedFileFullPath);
-
             return response($this->getColumnsNamesOfFile($uploadedFileFullPath ));
         }
     }
@@ -167,7 +169,6 @@ class UploadService
                 return '';
 
 
-// Check if file has been uploaded
             if (!$chunks || $chunk == $chunks - 1) {
                 // Strip the temp .part suffix off
                 rename("{$filePath}.part", $filePath);
@@ -259,21 +260,21 @@ class UploadService
 
     private function convertXlsToXlsxIfNeeded($filePath)
     {
-        $ext = strtolower(pathinfo($filePath, PATHINFO_EXTENSION));
-
-        if($ext != "xls")
-            return $filePath;
-
-        $spreadsheet = IOFactory::createReader("Excel2003XML");
-        $reader = $spreadsheet->load($filePath);
-        $writer = new Xlsx($reader);
-
-        $newFilePath = str_replace(".xls",".xlsx", $filePath);
-        $writer->save($newFilePath);
-
-        unlink($filePath);
-
-        return $newFilePath;
+//        $ext = strtolower(pathinfo($filePath, PATHINFO_EXTENSION));
+//
+//        if($ext != "xls")
+//            return $filePath;
+//
+//        $spreadsheet = IOFactory::createReader("Excel2003XML");
+//        $reader = $spreadsheet->load($filePath);
+//        $writer = new Xlsx($reader);
+//
+//        $newFilePath = str_replace(".xls",".xlsx", $filePath);
+//        $writer->save($newFilePath);
+//
+//        unlink($filePath);
+//
+//        return $newFilePath;
 
     }
 }

@@ -20,29 +20,33 @@ class AmazonSearchService implements ISearchService
     private $amazon;
     private $searchHash;
 
-    public function __construct($t_searchHash)
+    public function __construct()
     {
         $this->keyId = config("amazon.key_id");
         $this->secretKey = config("amazon.secret_key");
+        $this->associateId = config("amazon.associate_id");
 
         $urlBuilder = new AmazonUrlBuilder(
             $this->keyId,
             $this->secretKey,
-            "test",
-            'us'
+            $this->associateId,
+            'ca'
         );
 
         $this->amazon = new AmazonAPI($urlBuilder, 'simple');
 
-        $this->searchHash = $t_searchHash;
 
         return $this->amazon;
     }
 
-    public function startSearch()
+    public function startSearch($searchHash)
     {
-        $searchInfo = DB::table("searches")->where('hashedname', $this->searchHash)->first();
-        $products = DB::table("upload_{$this->searchHash}")->select()->limit(20)->get();
+        $this->searchHash = $searchHash;
+
+        $searchInfo = DB::table("searches")->where('hashedname', $searchHash)->first();
+        $products = DB::table("upload_{$searchHash}")->select()->limit(20)->get();
+
+        $test = $this->amazon->ItemSearch('harry potter');
 
         foreach ($products as $product)
             $foundItems = $this->amazon->ItemLookup($product->asin);

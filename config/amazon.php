@@ -2,7 +2,7 @@
 
 return [
 
-    "key_id" => "AKIAJWIW37KLYTGCAECA",
-    "secret_key" => "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",
-    "associate_d" => "test"
+    "key_id" => "AKIAJLB3FAPN7EWGNZUQ",
+    "secret_key" => "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",
+    "associate_id" => "kesyk123-20"
 ];

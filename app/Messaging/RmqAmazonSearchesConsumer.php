@@ -22,8 +22,11 @@ class RmqAmazonSearchesConsumer
     private $channel;
     private $exchange;
     private $queue;
+    private $amazonSearchService;
 
-    public function __construct(){
+    public function __construct(AmazonSearchService $t_amazonSearchService){
+        $this->amazonSearchService = $t_amazonSearchService;
+
         $this->exchange = config("amqp.properties.production.exchange");
         $this->queue = config("amqp.properties.production.queue");
         $host = config("amqp.properties.production.host");
@@ -52,6 +55,7 @@ class RmqAmazonSearchesConsumer
                 echo $e->getMessage();
             }
         }
+        
     }
 
     public function callback($message){
@@ -65,8 +69,9 @@ class RmqAmazonSearchesConsumer
             $existedSearch->progresstype == ProgressType::IN_PROCESS)
             return;
 
-        $amazonSearchService = new AmazonSearchService($searchHash);
-        $amazonSearchService->startSearch();
+        //$existedSearch->progresstype = ProgressType::IN_PROCESS;
+
+        $this->amazonSearchService->startSearch($searchHash);
     }
 
     public function closeConnection()

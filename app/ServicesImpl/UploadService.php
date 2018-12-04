@@ -6,8 +6,7 @@
  * Time: 3:12
  */
 
-namespace App\Services;
-
+namespace App\ServicesImpl;
 
 use App\AmazonSearch;
 use App\Enums\ProgressType;
@@ -15,6 +14,7 @@ use App\Messaging\RabbitMQPublisher;
 use App\Models\Database\AmazonProduct;
 use App\Models\MatchedResult;
 use App\Models\UserMatch;
+use App\Services\IUploadService;
 use App\Tools\ProductTableCreator;
 use Box\Spout\Common\Type;
 use Box\Spout\Reader\ReaderFactory;
@@ -22,9 +22,8 @@ use Exception;
 use Faker\Provider\Uuid;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
-use PhpOffice\PhpSpreadsheet\IOFactory;
 
-class UploadService
+class UploadService implements IUploadService
 {
     private $rabbitMQPublisher;
 
@@ -136,6 +135,47 @@ class UploadService
         }
     }
 
+    public function getColumnsOfFile($fullPath)
+    {
+//        $chunkReader = new ExcelChunkReader($fullPath);
+//        /**  Create a new Reader of the type defined in $inputFileType  **/
+//        $filter = new ExcelChunkFilter();
+//        $fileType = IOFactory::identify($fullPath);
+//        $reader = IOFactory::createReader($fileType);
+//
+//        /**  Define how many rows we want to read for each "chunk"  **/
+//        $chunkSize = 10;
+//        /**  Create a new Instance of our Read Filter  **/
+//
+//        /**  Tell the Reader that we want to use the Read Filter  **/
+//        $reader->setReadFilter($filter);
+//        $reader->setReadDataOnly(true);
+//        $reader->setReadEmptyCells(false);
+//        /**  Loop to read our worksheet in "chunk size" blocks  **/
+//        for ($startRow = 2; $startRow <= 65536; $startRow += $chunkSize) {
+//            /**  Tell the Read Filter which rows we want this iteration  **/
+//            $filter->setRows($startRow, $chunkSize);
+//            /**  Load only the rows that match our filter  **/
+//            $spreadsheet = $reader->load($fullPath);
+//        }
+        $reader = ReaderFactory::create($this->getFileExtensionType($fullPath));
+        //todo
+        $headerColumns=array();
+
+        $reader->open($fullPath);
+        foreach ($reader->getSheetIterator() as $sheet) {
+            foreach ($sheet->getRowIterator() as $row) {
+                $headerColumns = $row;
+                break;
+            }
+            break;
+        }
+        $reader->close();
+
+        return $headerColumns;
+    }
+
+    #region helpers
     private function startFileUploading()
     {
         try{
@@ -182,48 +222,6 @@ class UploadService
         }
     }
 
-
-    private function getColumnsNamesOfFile($fullPath)
-    {
-//        $chunkReader = new ExcelChunkReader($fullPath);
-//        /**  Create a new Reader of the type defined in $inputFileType  **/
-//        $filter = new ExcelChunkFilter();
-//        $fileType = IOFactory::identify($fullPath);
-//        $reader = IOFactory::createReader($fileType);
-//
-//        /**  Define how many rows we want to read for each "chunk"  **/
-//        $chunkSize = 10;
-//        /**  Create a new Instance of our Read Filter  **/
-//
-//        /**  Tell the Reader that we want to use the Read Filter  **/
-//        $reader->setReadFilter($filter);
-//        $reader->setReadDataOnly(true);
-//        $reader->setReadEmptyCells(false);
-//        /**  Loop to read our worksheet in "chunk size" blocks  **/
-//        for ($startRow = 2; $startRow <= 65536; $startRow += $chunkSize) {
-//            /**  Tell the Read Filter which rows we want this iteration  **/
-//            $filter->setRows($startRow, $chunkSize);
-//            /**  Load only the rows that match our filter  **/
-//            $spreadsheet = $reader->load($fullPath);
-//        }
-        $reader = ReaderFactory::create($this->getFileExtensionType($fullPath));
-        //todo
-        $headerColumns=array();
-
-        $reader->open($fullPath);
-        foreach ($reader->getSheetIterator() as $sheet) {
-            foreach ($sheet->getRowIterator() as $row) {
-                $headerColumns = $row;
-                break;
-            }
-            break;
-        }
-        $reader->close();
-
-        return $headerColumns;
-    }
-
-
     private function getIndexesOfDefaultColumns(UserMatch $userMatch, array $columnsNames)
     {
         $matchedResult = new MatchedResult();
@@ -238,7 +236,6 @@ class UploadService
 
         return $matchedResult;
     }
-
     private function getFileExtensionType($fileName)
     {
         $ext = pathinfo($fileName, PATHINFO_EXTENSION);
@@ -257,7 +254,6 @@ class UploadService
         }
 
     }
-
     private function convertXlsToXlsxIfNeeded($filePath)
     {
 //        $ext = strtolower(pathinfo($filePath, PATHINFO_EXTENSION));
@@ -277,4 +273,6 @@ class UploadService
 //        return $newFilePath;
 
     }
+
+    #endregion
 }

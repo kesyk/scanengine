@@ -16,13 +16,13 @@ use Illuminate\Container\Container;
 
 $container = Container::getInstance();
 $container->singleton(\App\Messaging\RabbitMQPublisher::class);
-$container->singleton(\App\Services\UploadService::class);
-$container->singleton(\App\Services\ISearchService::class, \App\Services\AmazonSearchService::class);
+$container->singleton(\App\Services\IUploadService::class,\App\ServicesImpl\UploadService::class);
+$container->singleton(\App\Services\ISearchService::class, \App\ServicesImpl\AmazonSearchService::class);
 $container->singleton(\App\Messaging\RmqAmazonSearchesConsumer::class);
 
 
 Route::get('/', "HomeController@index")->name('home');
-Route::get('upload', "UploadController@index")->name('upload');
 
+Route::get('upload', "UploadController@index")->name('upload');
 Route::post('upload', "UploadController@uploadFileToDisk")->name('uploadscanfile');
 Route::post('search', "UploadController@uploadFileToDb")->name('search');

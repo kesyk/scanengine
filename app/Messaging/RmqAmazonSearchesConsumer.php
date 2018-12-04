@@ -9,7 +9,7 @@
 namespace App\Messaging;
 
 use App\Enums\ProgressType;
-use App\Services\AmazonSearchService;
+use App\ServicesImpl\AmazonSearchService;
 use ErrorException;
 use Illuminate\Support\Facades\DB;
 use PhpAmqpLib\Connection\AMQPStreamConnection;

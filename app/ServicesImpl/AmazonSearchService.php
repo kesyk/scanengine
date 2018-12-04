@@ -6,8 +6,9 @@
  * Time: 1:16
  */
 
-namespace App\Services;
+namespace App\ServicesImpl;
 
+use App\Services\ISearchService;
 use Illuminate\Support\Facades\DB;
 use MarcL\AmazonAPI;
 use MarcL\AmazonUrlBuilder;

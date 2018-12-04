@@ -34,7 +34,7 @@ class UploadService implements IUploadService
 
     public function uploadFileToDb(UserMatch $userMatch, $fileName){
         try{
-            $fileFullName = Storage::disk('local')->getAdapter()->getPathPrefix().'/'.$fileName;
+            $fileFullName = Storage::disk('upload')->getAdapter()->getPathPrefix().'/'.$fileName;
 
             #region Validation
 
@@ -81,6 +81,8 @@ class UploadService implements IUploadService
 
             $reader = ReaderFactory::create($this->getFileExtensionType($fileName));
             $reader->open($fileFullName);
+
+
 
             foreach ($reader->getSheetIterator() as $sheet) {
                 foreach ($sheet->getRowIterator() as $row) {
@@ -131,7 +133,7 @@ class UploadService implements IUploadService
 
         if ($uploadedFileFullPath != '')
         {
-            return response($this->getColumnsNamesOfFile($uploadedFileFullPath ));
+            return response($this->getColumnsOfFile($uploadedFileFullPath));
         }
     }
 
@@ -158,6 +160,9 @@ class UploadService implements IUploadService
 //            /**  Load only the rows that match our filter  **/
 //            $spreadsheet = $reader->load($fullPath);
 //        }
+
+
+
         $reader = ReaderFactory::create($this->getFileExtensionType($fullPath));
         //todo
         $headerColumns=array();
@@ -187,7 +192,7 @@ class UploadService implements IUploadService
             $chunks = isset($_REQUEST["chunks"]) ? intval($_REQUEST["chunks"]) : 0;
 
             $fileName = isset($_REQUEST["name"]) ? $_REQUEST["name"] : $_FILES["file"]["name"];
-            $filePath = Storage::disk('local')->getAdapter()->getPathPrefix().$fileName;
+            $filePath = Storage::disk('upload')->getAdapter()->getPathPrefix().$fileName;
 
             // Open temp file
             $out = @fopen("{$filePath}.part", $chunk == 0 ? "wb" : "ab");

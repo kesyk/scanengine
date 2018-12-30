@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\Messaging\RmqAmazonSearchesConsumer;
+//use App\Messaging\RmqAmazonSearchesConsumer;
 use Illuminate\Console\Command;
 
 class ConsumerCommands extends Command
@@ -27,11 +27,11 @@ class ConsumerCommands extends Command
      *
      * @param RmqAmazonSearchesConsumer $amazonSearchesConsumer
      */
-    public function __construct(RmqAmazonSearchesConsumer $amazonSearchesConsumer)
+    public function __construct(/*RmqAmazonSearchesConsumer $amazonSearchesConsumer*/)
     {
         parent::__construct();
 
-        $this->amazonSearchesConsumer = $amazonSearchesConsumer;
+//        $this->amazonSearchesConsumer = $amazonSearchesConsumer;
     }
 
     /**

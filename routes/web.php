@@ -15,11 +15,11 @@
 use Illuminate\Container\Container;
 
 $container = Container::getInstance();
-$container->singleton(\App\Messaging\RabbitMQPublisher::class);
+//$container->singleton(\App\Messaging\RabbitMQPublisher::class);
 $container->singleton(\App\Services\IUploadService::class,\App\ServicesImpl\UploadService::class);
 $container->singleton(\App\Services\IDownloadService::class,\App\ServicesImpl\DownloadService::class);
 $container->singleton(\App\Services\ISearchService::class, \App\ServicesImpl\AmazonSearchService::class);
-$container->singleton(\App\Messaging\RmqAmazonSearchesConsumer::class);
+//$container->singleton(\App\Messaging\RmqAmazonSearchesConsumer::class);
 
 
 Route::get('/', "HomeController@index")->name('home');

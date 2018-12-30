@@ -10,7 +10,7 @@ namespace App\ServicesImpl;
 
 use App\AmazonSearch;
 use App\Enums\ProgressType;
-use App\Messaging\RabbitMQPublisher;
+//use App\Messaging\RabbitMQPublisher;
 use App\Models\Database\AmazonProduct;
 use App\Models\MatchedResult;
 use App\Models\UserMatch;
@@ -27,9 +27,9 @@ class UploadService implements IUploadService
 {
     private $rabbitMQPublisher;
 
-    public function __construct(RabbitMQPublisher $rabbitMQPublisher)
+    public function __construct(/*RabbitMQPublisher $rabbitMQPublisher*/)
     {
-        $this->rabbitMQPublisher = $rabbitMQPublisher;
+//        $this->rabbitMQPublisher = $rabbitMQPublisher;
     }
 
     public function uploadFileToDb(UserMatch $userMatch, $fileName){
@@ -118,7 +118,7 @@ class UploadService implements IUploadService
 
             $search->save();
 
-            $this->rabbitMQPublisher->publish($hashedName);
+//            $this->rabbitMQPublisher->publish($hashedName);
 
             return response(array("type" => "success", "message" => "Search process has started"));
         }
@@ -170,7 +170,7 @@ class UploadService implements IUploadService
         $reader->open($fullPath);
         foreach ($reader->getSheetIterator() as $sheet) {
             foreach ($sheet->getRowIterator() as $row) {
-                $headerColumns = $row;
+                $headerColumns = sizeof($row) == 1 ? explode(";", $row[0]) : $row;
                 break;
             }
             break;

@@ -18,6 +18,7 @@
         "linq/php-linq": "^1.0",
         "maatwebsite/excel": "^3.1",
         "marcl/amazonproductapi": "^3.0",
+        "mcs/amazon-mws": "^0.1.26",
         "myclabs/php-enum": "^1.6",
         "php-amqplib/php-amqplib": "^2.8",
         "phpoffice/phpspreadsheet": "^1.5",
